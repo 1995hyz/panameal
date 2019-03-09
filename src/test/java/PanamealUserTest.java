@@ -2,8 +2,7 @@
 public class PanamealUserTest {
 
     public void addUser() {
-        PanamealUser my_user = new PanamealUser("hao2@cooper.edu", "hao2", "1223324343");
-        assert(my_user.addUser() == 1);
+        assert(PanamealUser.addUser("hao2@cooper.edu", "hao2", "121232342") == 1);
     }
 
     public void updateUserGeneral() {

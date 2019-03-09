@@ -1,39 +1,14 @@
 import java.sql.ResultSet;
 
 public class PanamealUser {
-    private String email, username, passwordHash;
-    private String firstname, lastname, bio, emailSec, phone, imagePath;
-    private int privacyLevel;
     private static PanamealSQLHandler myHandler = new PanamealSQLHandler();
 
-    PanamealUser(String email, String username, String passwordHash) {
-        this.email = email;
-        this.username = username;
-        this.passwordHash = passwordHash;
-        this.privacyLevel = 3;
+    static int addUser(String email, String username, String passwordHash) {
+        return myHandler.execUpdate("INSERT INTO User (Email, User_Name, Password_Hash) VALUES (\"" +
+                email + "\",\"" + username + "\",\"" + passwordHash + "\");");
     }
 
-    PanamealUser(String email, String username, String passwordHash,
-                 String firstname, String lastname, String bio,
-                 String emailSec, String phone, String imagePath) {
-        this.email = email;
-        this.username = username;
-        this.passwordHash = passwordHash;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.bio = bio;
-        this.emailSec = emailSec;
-        this.phone = phone;
-        this.imagePath = imagePath;
-    }
-
-    public int addUser() {
-        int response = myHandler.execUpdate("INSERT INTO User (Email, User_Name, Password_Hash) VALUES (\"" +
-                this.email + "\",\"" + this.username + "\",\"" + this.passwordHash + "\");");
-        return response;
-    }
-
-    public static int retrieveId(String email) {
+    static int retrieveId(String email) {
         ResultSet response = myHandler.execQuery("SELECT User_Id FROM User WHERE Email=\"" + email + "\";");
         try {
             response.first();
@@ -45,25 +20,27 @@ public class PanamealUser {
         }
     }
 
-    public static int dropUser(String email) {
-        int userId = retrieveId(email);
-        if(userId == 0) {
-            return 0;
-        }
-        return myHandler.execUpdate("DELETE FROM User WHERE User_Id = " + userId);
+    static int dropUser(String email) {
+        return myHandler.execUpdate("DELETE FROM User WHERE Email = \"" + email + "\"");
     }
 
-    public int updateUserGeneral() {
-        PanamealSQLHandler myHandler = new PanamealSQLHandler();
-         return myHandler.execUpdate("UPDATE user SET");
+    static int updateUsername(String email, String username) {
+        return myHandler.execUpdate("UPDATE User SET User_Name = \"" + username + "\"" +
+                "WHERE Email = \"" + email + "\"");
     }
 
-    public ResultSet updateUserCredential() {
-        return null;
+    static int updateBio(String email, String bio) {
+        return myHandler.execUpdate("UPDATE User SET Bio = \"" + bio + "\"" +
+                "WHERE Email = \"" + email + "\"");
     }
 
-    public static ResultSet getUser(String Email){
-        return null;
+    static int updateCredential(String email, String passwordHash) {
+        return myHandler.execUpdate("UPDATE User SET Password_Hash = \"" + passwordHash + "\"" +
+                "WHERE Email = \"" + email + "\"");
     }
 
+    static ResultSet getUser(String email) {
+        System.out.println("SELECT * FROM User WHERE Email = \"" + email + "\";");
+        return myHandler.execQuery("SELECT * FROM User WHERE Email = \"" + email + "\";");
+    }
 }
