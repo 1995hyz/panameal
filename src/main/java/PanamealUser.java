@@ -26,23 +26,22 @@ public class PanamealUser {
         this.imagePath = imagePath;
     }
 
-    public ResultSet addUser() {
+    public int addUser() {
         PanamealSQLHandler myHandler = new PanamealSQLHandler();
-        ResultSet response = myHandler.execSQL("INSERT INTO user (Email, User_Name, Password_Hash) VALUES (" +
-                this.email + "," + this.username + "," + this.passwordHash + ")");
-        if(response == null){
-            return null;
-        }
+        int response = myHandler.execUpdate("INSERT INTO User (Email, User_Name, Password_Hash) VALUES (\"" +
+                this.email + "\",\"" + this.username + "\",\"" + this.passwordHash + "\");");
         return response;
     }
 
-    public ResultSet updateUserGeneral() {
+    public static int dropUser(String email) {
         PanamealSQLHandler myHandler = new PanamealSQLHandler();
-        ResultSet response = myHandler.execSQL("UPDATE user SET");
-        if(response == null){
-            return null;
-        }
+        int response = myHandler.execUpdate("");
         return response;
+    }
+
+    public int updateUserGeneral() {
+        PanamealSQLHandler myHandler = new PanamealSQLHandler();
+         return myHandler.execUpdate("UPDATE user SET");
     }
 
     public ResultSet updateUserCredential() {

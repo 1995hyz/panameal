@@ -31,16 +31,27 @@ public class PanamealSQLHandler {
         }
     }
 
-    public ResultSet execSQL(String SQLCommand) {
+    public ResultSet execQuery(String SQLCommand) {
         Connection myDB = establishConnection();
         try {
             Statement myStatement = myDB.createStatement();
-            ResultSet myRe = myStatement.executeQuery(SQLCommand);
-            return myRe;
+            return myStatement.executeQuery(SQLCommand);
         } catch (java.sql.SQLException e) {
             e.printStackTrace();
             System.out.println("Error: Fail to create/exec a SQL statement.");
             return null;
+        }
+    }
+
+    public int execUpdate(String SQLCommand) {
+        Connection myDB = establishConnection();
+        try {
+            Statement myStatement = myDB.createStatement();
+            return myStatement.executeUpdate(SQLCommand);
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error: Fail to update with a SQL statement.");
+            return 0;
         }
     }
 }
