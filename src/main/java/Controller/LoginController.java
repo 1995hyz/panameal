@@ -1,6 +1,7 @@
 package Controller;
 
 import model.LoginForm;
+import model.UserDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,20 @@ public class LoginController {
     public ResponseEntity getLoginForm(@RequestBody LoginForm loginForm) {
         System.out.println(loginForm.getEmail());
         System.out.println(loginForm.getPasswordHash());
-        return ResponseEntity.ok(HttpStatus.OK);
+        UserDB sampleUserDB = new UserDB();
+        HashMap<String, User> sampleUsers = sampleUserDB.getUserDB();
+        if(sampleUsers.containsKey(loginForm.getEmail())) {
+            if(sampleUsers.get(loginForm.getEmail()).getPasswordHash().equals(loginForm.getPasswordHash())) {
+                return ResponseEntity.ok(HttpStatus.OK);
+            }
+            else {
+                return ResponseEntity.ok(HttpStatus.BAD_REQUEST);
+            }
+        }
+        else {
+            return ResponseEntity.ok(HttpStatus.BAD_REQUEST);
+        }
+        //return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @RequestMapping("/")
@@ -35,7 +49,11 @@ public class LoginController {
     /* To test, use the following command:
         curl localhost:8080/login
         -i -H "Accept: application/json" -H "Content-Type:application/json"
-        -X POST --data '{"email":"test@cooper.edu", "passwordHash":"paaskldfjasd"}'
+        -X POST --data '{"email":"test@cooper.edu", "passwordHash":"12345678"}'
+       For windows cmd:
+        curl localhost:8080/login
+        -i -H "Accept: application/json" -H "Content-Type:application/json"
+        -X POST --data "{"""email""":"""test@cooper.edu""", """passwordHash""":"""12345678"""}"
      */
 
 }
