@@ -13,14 +13,44 @@ public class User {
 
     private String email;
     private String username;
-    /*private String passwordHash;
+    private String passwordHash;
     private String firstname;
     private String lastname;
     private String bio;
     private String emailSecond;
     private String phone;
-    private int privacyLevel;
-    private String imagePath;*/
+    private Integer privacyLevel;
+    private String imagePath;
+
+    public User() {
+
+    }
+
+    public User(String email, String username, String passwordHash) {
+        this.email = email;
+        this.username = username;
+        this.passwordHash = passwordHash;
+        this.firstname = "";
+        this.lastname = "";
+        this.bio = "";
+        this.emailSecond = "";
+        this.phone = "";
+        this.privacyLevel = 3;
+        this.imagePath = "";
+    }
+
+    public User(String email, String username, String passwordHash, String firstname, String lastname, String bio, String emailSecond, String phone, int privacyLevel, String imagePath) {
+        this.email = email;
+        this.username = username;
+        this.passwordHash = passwordHash;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.bio = bio;
+        this.emailSecond = emailSecond;
+        this.phone = phone;
+        this.privacyLevel = privacyLevel;
+        this.imagePath = imagePath;
+    }
 
     public Integer getId() {
         return id;
@@ -46,7 +76,7 @@ public class User {
         this.username = username;
     }
 
-    /*public String getPasswordHash() {
+    public String getPasswordHash() {
         return passwordHash;
     }
 
@@ -94,11 +124,11 @@ public class User {
         this.phone = phone;
     }
 
-    public int getPrivacyLevel() {
+    public Integer getPrivacyLevel() {
         return privacyLevel;
     }
 
-    public void setPrivacyLevel(int privacyLevel) {
+    public void setPrivacyLevel(Integer privacyLevel) {
         this.privacyLevel = privacyLevel;
     }
 
@@ -108,6 +138,6 @@ public class User {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
-    }*/
+    }
 
 }
