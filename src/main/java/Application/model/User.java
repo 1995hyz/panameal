@@ -1,16 +1,34 @@
-package model;
+package Application.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     private String email;
     private String username;
-    private String passwordHash;
+    /*private String passwordHash;
     private String firstname;
     private String lastname;
     private String bio;
     private String emailSecond;
     private String phone;
     private int privacyLevel;
-    private String imagePath;
+    private String imagePath;*/
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
@@ -28,7 +46,7 @@ public class User {
         this.username = username;
     }
 
-    public String getPasswordHash() {
+    /*public String getPasswordHash() {
         return passwordHash;
     }
 
@@ -90,6 +108,6 @@ public class User {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
-    }
+    }*/
 
 }

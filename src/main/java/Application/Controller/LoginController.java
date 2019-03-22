@@ -1,8 +1,7 @@
-package Controller;
+package Application.Controller;
 
-import model.LoginForm;
-import model.UserDB;
-import org.apache.juli.logging.Log;
+import Application.model.LoginForm;
+import Application.model.UserDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import service.LoginService;
+import Application.service.LoginService;
 
-import model.User;
+import Application.model.User;
 import java.util.HashMap;
 
 @RestController
@@ -24,7 +23,7 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity <LoginForm> getLoginForm(@RequestBody LoginForm loginForm) {
-        System.out.println(loginForm.getEmail());
+        /*System.out.println(loginForm.getEmail());
         System.out.println(loginForm.getPasswordHash());
         UserDB sampleUserDB = new UserDB();
         HashMap<String, User> sampleUsers = sampleUserDB.getUserDB();
@@ -38,8 +37,9 @@ public class LoginController {
         }
         else {
             return new ResponseEntity <LoginForm> (loginForm, HttpStatus.UNAUTHORIZED);
-        }
+        }*/
         //return ResponseEntity.ok(HttpStatus.OK);
+        return null;
     }
 
     @RequestMapping("/signup")
