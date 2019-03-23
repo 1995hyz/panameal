@@ -1,5 +1,10 @@
 package Application.model;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 public class SignUpForm {
 
     String email;
@@ -28,6 +33,21 @@ public class SignUpForm {
 
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
+    }
+
+    public String storeProfileImage(Integer userId, BufferedImage profilePic){
+        String imagePath = "C:\\Panameal_Images\\" + Integer.toString(userId) + "\\Profile_Pic";
+        File dirPath = new File(imagePath);
+        if(!dirPath.exists()) {
+            dirPath.mkdir();
+        }
+        File userImage = new File(imagePath + "\\Profile");
+        try {
+            ImageIO.write(profilePic, "jpg", userImage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imagePath;
     }
 
 }
