@@ -55,6 +55,11 @@ public class LoginController {
         else {
             return new ResponseEntity<>(null, HttpStatus.OK);
         }
+        /*
+        To test, use the following command:
+            curl localhost:8080/login -i -H "Accept: application/json" -H "Content-Type:application/json"
+            -X POST --data "{"""email""":"""test@cooper.edu""", """username""":"""hello""","""passwordHash""":"""12345678"""}"
+         */
     }
 
     @RequestMapping("/")

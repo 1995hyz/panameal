@@ -1,9 +1,6 @@
 package Application.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -11,15 +8,24 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column(length = 63)
     private String email;
+    @Column(length = 63)
     private String username;
+    @Column(length = 63)
     private String passwordHash;
+    @Column(length = 31)
     private String firstname;
+    @Column(length = 31)
     private String lastname;
+    @Column(length = 2017)
     private String bio;
+    @Column(length = 63)
     private String emailSecond;
+    @Column(length = 15)
     private String phone;
     private Integer privacyLevel;
+    @Column(length = 255)
     private String imagePath;
 
     public User() {
