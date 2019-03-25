@@ -59,7 +59,7 @@ function ProductHowItWorks(props) {
     <section className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="large">
         <img
-          src="/static/themes/onepirate/productCurvyLines.png"
+          src={process.env.PUBLIC_URL+"/productCurvyLines.png"}
           className={classes.curvyLines}
           alt="curvy lines"
         />
@@ -72,7 +72,7 @@ function ProductHowItWorks(props) {
               <div className={classes.item}>
                 <div className={classes.number}>1.</div>
                 <img
-                  src="/static/themes/onepirate/productHowItWorks1.svg"
+                  src={process.env.PUBLIC_URL+"/productHowItWorks1.svg"}
                   alt="suitcase"
                   className={classes.image}
                 />
@@ -85,7 +85,7 @@ function ProductHowItWorks(props) {
               <div className={classes.item}>
                 <div className={classes.number}>2.</div>
                 <img
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
+                  src={process.env.PUBLIC_URL+"/productHowItWorks2.svg"}
                   alt="graph"
                   className={classes.image}
                 />
@@ -98,7 +98,7 @@ function ProductHowItWorks(props) {
               <div className={classes.item}>
                 <div className={classes.number}>3.</div>
                 <img
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
+                  src={process.env.PUBLIC_URL+"/productHowItWorks3.svg"}
                   alt="clock"
                   className={classes.image}
                 />
@@ -116,7 +116,7 @@ function ProductHowItWorks(props) {
           variant="contained"
           className={classes.button}
           component={linkProps => (
-            <Link {...linkProps} href="/premium-themes/onepirate/sign-up" variant="button" />
+            <Link {...linkProps} href="/sign-up" variant="button" />
           )}
         >
           Get started

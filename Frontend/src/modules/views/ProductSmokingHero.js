@@ -41,7 +41,8 @@ function ProductSmokingHero(props) {
       <Typography variant="subtitle1" className={classes.link}>
         We are here to help. Get in touch!
       </Typography>
-      <img src="/static/themes/onepirate/producBuoy.svg" className={classes.buoy} alt="buoy" />
+      <img src={process.env.PUBLIC_URL+"producBuoy.svg"}
+           className={classes.buoy} alt="buoy" />
     </LayoutBody>
   );
 }

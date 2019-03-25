@@ -59,7 +59,7 @@ const LANGUAGES = [
   },
   {
     code: 'fr-FR',
-    name: 'Français',
+    name: 'Chinese',
   },
 ];
 
@@ -80,10 +80,10 @@ function AppFooter(props) {
             >
               <Grid item className={classes.icons}>
                 <a href="https://material-ui.com/" className={classes.icon}>
-                  <img src="/static/themes/onepirate/appFooterFacebook.png" alt="Facebook" />
+                  <img src={process.env.PUBLIC_URL+"appFooterFacebook.png"} alt="Facebook" />
                 </a>
                 <a href="https://twitter.com/MaterialUI" className={classes.icon}>
-                  <img src="/static/themes/onepirate/appFooterTwitter.png" alt="Twitter" />
+                  <img src={process.env.PUBLIC_URL+"appFooterTwitter.png"} alt="Twitter" />
                 </a>
               </Grid>
               <Grid item>© 2018 Onepirate</Grid>
@@ -95,10 +95,10 @@ function AppFooter(props) {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/terms">Terms</Link>
+                <Link href="/terms">Terms</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/privacy">Privacy</Link>
+                <Link href="/privacy">Privacy</Link>
               </li>
             </ul>
           </Grid>
@@ -119,27 +119,6 @@ function AppFooter(props) {
                 </option>
               ))}
             </TextField>
-          </Grid>
-          <Grid item>
-            <Typography variant="caption">
-              {'Icons made by '}
-              <Link href="http://www.freepik.com" title="Freepik">
-                Freepik
-              </Link>
-              {' from '}
-              <Link href="https://www.flaticon.com/" title="Flaticon">
-                www.flaticon.com
-              </Link>
-              {' is licensed by '}
-              <Link
-                href="http://creativecommons.org/licenses/by/3.0/"
-                title="Creative Commons BY 3.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC 3.0 BY
-              </Link>
-            </Typography>
           </Grid>
         </Grid>
       </LayoutBody>

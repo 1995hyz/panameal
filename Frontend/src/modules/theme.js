@@ -12,12 +12,12 @@ const rawTheme = createMuiTheme({
     },
     secondary: {
       light: '#fff5f8',
-      main: '#ff3366',
-      dark: '#e62958',
+      main: '#ffaf5c',
+      dark: '#e66d26',
     },
     warning: {
-      main: '#ffc071',
-      dark: '#ffb25e',
+      main: '#ff3366',
+      dark: '#e62958',
     },
     error: {
       xLight: red[50],

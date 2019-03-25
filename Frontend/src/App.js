@@ -1,184 +1,50 @@
 import withRoot from './modules/withRoot';
 // --- Post bootstrap -----
-import React from 'react';
-import PropTypes from 'prop-types';
-import compose from 'recompose/compose';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import { Field, Form, FormSpy } from 'react-final-form';
-import Typography from './modules/components/Typography';
-import AppFooter from './modules/views/AppFooter';
-import AppAppBar from './modules/views/AppAppBar';
-import AppForm from './modules/views/AppForm';
-import { email, required } from './modules/form/validation';
-import RFTextField from './modules/form/RFTextField';
-import FormButton from './modules/form/FormButton';
-import FormFeedback from './modules/form/FormFeedback';
-
-const styles = theme => ({
-    form: {
-        marginTop: theme.spacing.unit * 6,
-    },
-    button: {
-        marginTop: theme.spacing.unit * 3,
-        marginBottom: theme.spacing.unit * 2,
-    },
-    feedback: {
-        marginTop: theme.spacing.unit * 2,
-    },
-});
+import React, { Component } from 'react'
+import Home from './Home';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+import Terms from './Terms';
+import Privacy from './Privacy';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 const url = 'http://localhost:8080';
 
-class SignUp extends React.Component {
-    state = {
-        sent: false,
-    };
 
-    validate = values => {
-        const errors = required(['username', 'email', 'password'], values, this.props);
-
-        if (!errors.email) {
-            const emailError = email(values.email, values, this.props);
-            if (emailError) {
-                errors.email = email(values.email, values, this.props);
-            }
-        }
-
-        return errors;
-    };
-
-    handleSubmit = values => {
-        console.log("SUCCESSS")
-        values.submitting = true;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: values.email,
-                username: values.username,
-                passwordHash: values.password,
-            }),
-        }).then(res => res.json())
-            .then(res => console.log(res));
-
-        console.log(values.email)
-
-    };
-
+class App extends Component {
     render() {
-        const { classes } = this.props;
-        const { sent } = this.state;
-
         return (
-            <React.Fragment>
-                <AppAppBar />
-                <AppForm>
-                    <React.Fragment>
-                        <Typography variant="h3" gutterBottom marked="center" align="center">
-                            Sign Up
-                        </Typography>
-                        <Typography variant="body2" align="center">
-                            <Link href="/premium-themes/onepirate/sign-in" underline="always">
-                                Already have an account?
-                            </Link>
-                        </Typography>
-                    </React.Fragment>
-                    <Form
-                        onSubmit={this.handleSubmit}
-                        subscription={{ submitting: true }}
-                        validate={this.validate}
-                    >
-                        {({ handleSubmit, submitting }) => (
-                            <form onSubmit={handleSubmit} className={classes.form} noValidate>
-                                <Grid container spacing={16}>
-                                    <Grid item xs={12} sm={6}>
-                                        <Field
-                                            autoFocus
-                                            component={RFTextField}
-                                            autoComplete="fname"
-                                            fullWidth
-                                            label="First name"
-                                            name="firstName"
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12} sm={6}>
-                                        <Field
-                                            component={RFTextField}
-                                            autoComplete="lname"
-                                            fullWidth
-                                            label="Last name"
-                                            name="lastName"
-                                        />
-                                    </Grid>
-                                </Grid>
-                                <Field
-                                    autoComplete="username"
-                                    component={RFTextField}
-                                    disabled={submitting || sent}
-                                    fullWidth
-                                    label="Username"
-                                    margin="normal"
-                                    name="username"
-                                    required
-                                />
-                                <Field
-                                    autoComplete="email"
-                                    component={RFTextField}
-                                    disabled={submitting || sent}
-                                    fullWidth
-                                    label="Email"
-                                    margin="normal"
-                                    name="email"
-                                    required
-                                />
-                                <Field
-                                    fullWidth
-                                    component={RFTextField}
-                                    disabled={submitting || sent}
-                                    required
-                                    name="password"
-                                    autoComplete="current-password"
-                                    label="Password"
-                                    type="password"
-                                    margin="normal"
-                                />
-                                <FormSpy subscription={{ submitError: true }}>
-                                    {({ submitError }) =>
-                                        submitError ? (
-                                            <FormFeedback className={classes.feedback} error>
-                                                {submitError}
-                                            </FormFeedback>
-                                        ) : null
-                                    }
-                                </FormSpy>
-                                <FormButton
-                                    className={classes.button}
-                                    disabled={submitting || sent}
-                                    color="secondary"
-                                    fullWidth
-                                >
-                                    {submitting || sent ? 'In progress…' : 'Sign Up'}
-                                </FormButton>
-                            </form>
-                        )}
-                    </Form>
-                </AppForm>
-                <AppFooter />
-            </React.Fragment>
+            <BrowserRouter>
+                <div>
+                    <Route exact={true} path='/' render={() => (
+                        <div className="App">
+                            <Home />
+                        </div>
+                    )}/>
+                    <Route exact={true} path='/Signin' render={() => (
+                        <div className="App">
+                            <SignIn />
+                        </div>
+                    )}/>
+                    <Route exact={true} path='/Signup' render={() => (
+                        <div className="App">
+                            <SignUp />
+                        </div>
+                    )}/>
+                    <Route exact={true} path='/Terms' render={() => (
+                        <div className="App">
+                            <Terms />
+                        </div>
+                    )}/>
+                    <Route exact={true} path='/Privacy' render={() => (
+                        <div className="App">
+                            <Privacy />
+                        </div>
+                    )}/>
+                </div>
+            </BrowserRouter>
         );
     }
 }
 
-SignUp.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-export default compose(
-    withRoot,
-    withStyles(styles),
-)(SignUp);
+export default App;

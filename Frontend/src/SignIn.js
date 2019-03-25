@@ -15,6 +15,8 @@ import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
 
+const url = 'http://localhost:8080';
+
 const styles = theme => ({
   form: {
     marginTop: theme.spacing.unit * 6,
@@ -47,11 +49,21 @@ class SignIn extends React.Component {
   };
 
   handleSubmit = values => {
-    var data = {
-      "User": [
-        {"email": values.email, "passwordHash": values.password}
-      ]
-    }
+    console.log("SUCCESSS")
+    values.submitting = true;
+    fetch(url + '/login', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: values.email,
+        passwordHash: values.password,
+      }),
+    }).then(res => console.log(res));
+    console.log(values.email)
+
   };
 
   render() {

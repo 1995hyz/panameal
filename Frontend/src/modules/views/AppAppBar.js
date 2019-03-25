@@ -49,7 +49,7 @@ function AppAppBar(props) {
             underline="none"
             color="inherit"
             className={classes.title}
-            href="/premium-themes/onepirate"
+            href="/"
           >
             {'Panameal'}
           </Link>
@@ -59,7 +59,7 @@ function AppAppBar(props) {
               variant="h6"
               underline="none"
               className={classes.rightLink}
-              href="/sign-in"
+              href="/SignIn"
             >
               {'Sign In'}
             </Link>
@@ -67,7 +67,7 @@ function AppAppBar(props) {
               variant="h6"
               underline="none"
               className={classNames(classes.rightLink, classes.linkSecondary)}
-              href="/premium-themes/onepirate/sign-up"
+              href="/SignUp"
             >
               {'Sign Up'}
             </Link>
