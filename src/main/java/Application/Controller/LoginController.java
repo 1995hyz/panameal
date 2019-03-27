@@ -24,14 +24,14 @@ public class LoginController {
     public ResponseEntity<Optional> getLoginForm(@RequestBody LoginForm loginForm) {
         Optional<User> currUser = userRepository.findByEmail(loginForm.getEmail());
         if(currUser.isEmpty()) {
-            return new ResponseEntity <>(null, HttpStatus.OK);
+            return new ResponseEntity <>(null, HttpStatus.UNAUTHORIZED);
         }
         else {
             if(currUser.get().getPasswordHash().equals(loginForm.getPasswordHash())) {
                 return new ResponseEntity<>(currUser, HttpStatus.OK);
             }
             else {
-                return new ResponseEntity<>(null, HttpStatus.OK);
+                return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
             }
         }
         /*
