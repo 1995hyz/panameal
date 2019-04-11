@@ -1,48 +1,27 @@
-import withRoot from './modules/withRoot';
 // --- Post bootstrap -----
 import React, { Component } from 'react'
 import Home from './Home';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import Terms from './Terms';
-import Privacy from './Privacy';
-import {BrowserRouter, Route} from 'react-router-dom';
-
-const url = 'http://localhost:8080';
-
+import ForgotPassword from './ForgotPassword';
+import Feed from './Feed';
+import Profile from './Profile';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {PrivateRoute} from './modules/components/PrivateRoute';
 
 class App extends Component {
     render() {
         return (
-            <BrowserRouter>
-                <div>
-                    <Route exact={true} path='/' render={() => (
-                        <div className="App">
-                            <Home />
-                        </div>
-                    )}/>
-                    <Route exact={true} path='/Signin' render={() => (
-                        <div className="App">
-                            <SignIn />
-                        </div>
-                    )}/>
-                    <Route exact={true} path='/Signup' render={() => (
-                        <div className="App">
-                            <SignUp />
-                        </div>
-                    )}/>
-                    <Route exact={true} path='/Terms' render={() => (
-                        <div className="App">
-                            <Terms />
-                        </div>
-                    )}/>
-                    <Route exact={true} path='/Privacy' render={() => (
-                        <div className="App">
-                            <Privacy />
-                        </div>
-                    )}/>
-                </div>
-            </BrowserRouter>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/signin" component={SignIn} />
+                    <Route exact path="/signup" component={SignUp} />
+                    <Route exact path="/forgotpassword" component={ForgotPassword} />
+                    <Route exact path="/profile" component={Profile} />
+                    <PrivateRoute exact path="/feed" component={Feed} />
+                </Switch>
+            </Router>
         );
     }
 }

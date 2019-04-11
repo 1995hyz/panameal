@@ -45,7 +45,6 @@ const styles = theme => ({
     right: 0,
     bottom: 0,
     width: '100%',
-    background: 'url(/static/onepirate/productCTAImageDots.png)',
   },
   image: {
     position: 'absolute',
@@ -86,10 +85,10 @@ class ProductCTA extends React.Component {
             <div className={classes.card}>
               <form onSubmit={this.handleSubmit} className={classes.cardContent}>
                 <Typography variant="h2" component="h2" gutterBottom>
-                  Receive offers
+                  Get A bunch of Emails
                 </Typography>
                 <Typography variant="h5">
-                  Taste the holidays of the everyday close to home.
+                  Look for Food.
                 </Typography>
                 <TextField noBorder className={classes.textField} placeholder="Your email" />
                 <Button
@@ -107,7 +106,7 @@ class ProductCTA extends React.Component {
             <Hidden smDown>
               <div className={classes.imageDots} />
               <img
-                src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750&q=80"
+                src="https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2016/howcuttingdo.jpg"
                 alt="call to action"
                 className={classes.image}
               />

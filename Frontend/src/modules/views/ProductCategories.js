@@ -89,26 +89,26 @@ function ProductCategories(props) {
   const images = [
     {
       url:
-        'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
-      title: 'Snorkeling',
+        'https://www.seriouseats.com/recipes/images/2017/06/20170526-no-bake-cheesecake-vicky-wasik-18-625x469.jpg',
+      title: 'Dessert',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
-      title: 'Massage',
+        'https://sallysbakingaddiction.com/wp-content/uploads/2018/07/best-black-bean-burgers-2.jpg',
+      title: 'Burgers',
       width: '20%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80',
-      title: 'Hiking',
+        'https://rubinerphoto.com/ar/wp-content/uploads/2018/01/Food_Hospitality-5.jpg',
+      title: 'Designs',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
-      title: 'Tour',
+        'https://wwwcache.wral.com/asset/entertainment/out_and_about/2018/01/09/17244047/desssert-DMID1-5de4ranuh-640x360.jpg',
+      title: 'Gourmet',
       width: '38%',
     },
     {
@@ -119,26 +119,26 @@ function ProductCategories(props) {
     },
     {
       url:
-        'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80',
-      title: 'Shopping',
+        'https://showmetheyummy.com/wp-content/uploads/2018/07/Easy-Summer-Recipes-2018.jpg',
+      title: 'Recipes',
       width: '24%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80',
-      title: 'Walking',
+        'https://img.grouponcdn.com/bynder/Ri5HEhJFF4o6PFz5WCG2rrSNN4A/Ri-2048x1229/v1/c700x420.jpg',
+      title: 'Sushi',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1533727937480-da3a97967e95?auto=format&fit=crop&w=400&q=80',
-      title: 'Fitness',
+        'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg',
+      title: 'Cookies',
       width: '20%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80',
-      title: 'Reading',
+        'https://s23209.pcdn.co/wp-content/uploads/2015/04/IMG_5101edit-1.jpg',
+      title: 'Home Made',
       width: '40%',
     },
   ];

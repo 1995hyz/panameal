@@ -15,6 +15,16 @@ const styles = theme => ({
   marginBottom: {
     marginBottom: theme.spacing.unit * 12,
   },
+  widthTiny: {
+    width: 'auto',
+    marginLeft: theme.spacing.unit * 3,
+    marginRight: theme.spacing.unit * 3,
+    [theme.breakpoints.up(330 + theme.spacing.unit * 6)]: {
+      width: 330,
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+  },
   widthSmall: {
     width: 'auto',
     marginLeft: theme.spacing.unit * 3,

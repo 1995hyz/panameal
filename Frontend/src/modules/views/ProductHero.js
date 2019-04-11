@@ -5,9 +5,10 @@ import Link from '@material-ui/core/Link';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
+import {Link as LinkRouter} from 'react-router-dom';
 
 const backgroundImage =
-  'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
+  'https://i.kinja-img.com/gawker-media/image/upload/s--vHt6tbFa--/c_scale,f_auto,fl_progressive,q_80,w_800/xjmx1csashjww8j8jwyh.jpg';
 
 const styles = theme => ({
   background: {
@@ -38,18 +39,19 @@ function ProductHero(props) {
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+        Post Your Food
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
+        Look at all types of food from the world.
       </Typography>
       <Button
         color="secondary"
         variant="contained"
         size="large"
+        align="center"
         className={classes.button}
         component={linkProps => (
-          <Link {...linkProps} href="/sign-up" variant="button" />
+          <Link {...linkProps} component={LinkRouter} to={"/signup"} variant="button" />
         )}
       >
         Register

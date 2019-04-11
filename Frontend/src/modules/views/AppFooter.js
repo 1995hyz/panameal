@@ -8,6 +8,7 @@ import Link from '@material-ui/core/Link';
 import LayoutBody from '../components/LayoutBody';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
+import {Link as LinkRouter} from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -79,14 +80,14 @@ function AppFooter(props) {
               spacing={16}
             >
               <Grid item className={classes.icons}>
-                <a href="https://material-ui.com/" className={classes.icon}>
+                <a href="https://linkedin.com/in/kevinlin6543" className={classes.icon}>
                   <img src={process.env.PUBLIC_URL+"appFooterFacebook.png"} alt="Facebook" />
                 </a>
-                <a href="https://twitter.com/MaterialUI" className={classes.icon}>
+                <a href="https://github.com/kevinlin6543" className={classes.icon}>
                   <img src={process.env.PUBLIC_URL+"appFooterTwitter.png"} alt="Twitter" />
                 </a>
               </Grid>
-              <Grid item>© 2018 Onepirate</Grid>
+              <Grid item>© 2019 Panameal</Grid>
             </Grid>
           </Grid>
           <Grid item xs={6} sm={4} md={2}>
@@ -95,10 +96,10 @@ function AppFooter(props) {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="/terms">Terms</Link>
+                <Link component={LinkRouter} to={"/terms"}>Terms</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="/privacy">Privacy</Link>
+                <Link component={LinkRouter} to={"/privacy"}>Privacy</Link>
               </li>
             </ul>
           </Grid>

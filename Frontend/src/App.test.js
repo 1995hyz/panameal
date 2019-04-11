@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router } from 'react-router-dom'
+import history from './history';
 import App from './App';
 
 it('renders without crashing', () => {
@@ -7,3 +9,4 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
