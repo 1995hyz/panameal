@@ -2,7 +2,7 @@ package Application.model;
 
 public class PostForm {
     String email;
-    String post;
+    String content;
     int privacy_level;
 
     public String getEmail() {
@@ -13,12 +13,12 @@ public class PostForm {
         this.email = email;
     }
 
-    public String getPost() {
-        return post;
+    public String getContent() {
+        return content;
     }
 
-    public void setPost(String post) {
-        this.post = post;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public int getPrivacy_level() {

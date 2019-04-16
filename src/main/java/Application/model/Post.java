@@ -4,14 +4,14 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "post")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer post_id;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
-    private User user_id;
+    @Column()
+    private Integer user_id;
     @Column(length = 4095)
     private String content;
     @Column()
@@ -22,17 +22,18 @@ public class Post {
 
     public Post() {}
 
-    public Post(User user, String content, Integer privacy_level) {
+    public Post(Integer user, String content, Integer privacy_level) {
         this.user_id = user;
         this.content = content;
         this.privacy_level = privacy_level;
+        this.post_time = new java.util.Date();
     }
 
     public Integer getPost_id() {
         return post_id;
     }
 
-    public User getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 

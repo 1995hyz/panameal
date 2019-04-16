@@ -3,9 +3,12 @@ package Application.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    //@Column(name = "id")
+    //@OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
     private Integer id;
 
     @Column(length = 63)
