@@ -19,6 +19,8 @@ public class LoginController {
     LoginService ls;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PostRepository postRepository;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<Optional> getLoginForm(@RequestBody LoginForm loginForm) {
@@ -57,6 +59,19 @@ public class LoginController {
             curl localhost:8080/login -i -H "Accept: application/json" -H "Content-Type:application/json"
             -X POST --data "{"""email""":"""test@cooper.edu""", """username""":"""hello""","""passwordHash""":"""12345678"""}"
          */
+    }
+
+    @RequestMapping("/create/post")
+    public ResponseEntity<Post> createPost(@RequestBody PostForm postForm) {
+        Optional<User> currUser = userRepository.findByEmail(postForm.getEmail());
+        if(currUser.isEmpty()) {
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+        }
+        else {
+            Post newPost = new Post(currUser.get(), postForm.getPost(), postForm.getPrivacy_level());
+            postRepository.save(newPost);
+            return new ResponseEntity<>(null, HttpStatus.OK);
+        }
     }
 
     @RequestMapping("/")
