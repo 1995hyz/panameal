@@ -15,6 +15,7 @@ import { email, required } from './modules/form/validation';
 import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
+import { Redirect, Link as LinkRouter} from 'react-router-dom';
 
 const styles = theme => ({
   form: {
@@ -35,6 +36,7 @@ const url = 'http://localhost:8080';
 class SignUp extends React.Component {
   state = {
     sent: false,
+    redirect: false,
   };
 
   validate = values => {
@@ -64,7 +66,13 @@ class SignUp extends React.Component {
         username: values.username,
         passwordHash: values.password,
       }),
-    }).then(res => console.log(res));
+    }).then(res => {
+      console.log(res);
+      if(res.status === 200)
+        this.setState({redirect: true});
+      else
+        this.setState({redirect: false});
+    });
 
     console.log(values.email)
 
@@ -73,7 +81,8 @@ class SignUp extends React.Component {
   render() {
     const { classes } = this.props;
     const { sent } = this.state;
-
+    if (this.state.redirect)
+      return <Redirect push to="/signin"/>;
     return (
         <React.Fragment>
           <AppAppBar />
@@ -83,7 +92,11 @@ class SignUp extends React.Component {
                 Sign Up
               </Typography>
               <Typography variant="body2" align="center">
-                <Link href="/premium-themes/onepirate/sign-in" underline="always">
+                <Link
+                    underline="always"
+                    component={LinkRouter}
+                    to={"/signin"}
+                >
                   Already have an account?
                 </Link>
               </Typography>

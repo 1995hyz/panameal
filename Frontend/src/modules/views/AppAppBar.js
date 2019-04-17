@@ -5,6 +5,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '../components/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
+import {Link as LinkRouter} from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   title: {
@@ -49,7 +51,8 @@ function AppAppBar(props) {
             underline="none"
             color="inherit"
             className={classes.title}
-            href="/"
+            component={LinkRouter}
+            to={"/"}
           >
             {'Panameal'}
           </Link>
@@ -59,7 +62,8 @@ function AppAppBar(props) {
               variant="h6"
               underline="none"
               className={classes.rightLink}
-              href="/SignIn"
+              component={LinkRouter}
+              to={"/signin"}
             >
               {'Sign In'}
             </Link>
@@ -67,7 +71,8 @@ function AppAppBar(props) {
               variant="h6"
               underline="none"
               className={classNames(classes.rightLink, classes.linkSecondary)}
-              href="/SignUp"
+              component={LinkRouter}
+              to={"/signup"}
             >
               {'Sign Up'}
             </Link>

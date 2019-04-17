@@ -14,8 +14,22 @@ import { email, required } from './modules/form/validation';
 import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
+import { Redirect } from 'react-router-dom';
+import {Link as LinkRouter} from 'react-router-dom';
 
 const url = 'http://localhost:8080';
+
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true;
+    setTimeout(cb, 100); // fake async
+  },
+  signout(cb) {
+    this.isAuthenticated = false;
+    setTimeout(cb, 100);
+  }
+};
 
 const styles = theme => ({
   form: {
@@ -28,11 +42,16 @@ const styles = theme => ({
   feedback: {
     marginTop: theme.spacing.unit * 2,
   },
+  text: {
+    color: theme.palette.warning.main,
+  },
 });
 
 class SignIn extends React.Component {
   state = {
     sent: false,
+    redirect: false,
+    incorrect: false,
   };
 
   validate = values => {
@@ -49,7 +68,6 @@ class SignIn extends React.Component {
   };
 
   handleSubmit = values => {
-    console.log("SUCCESSS")
     values.submitting = true;
     fetch(url + '/login', {
       method: 'POST',
@@ -61,16 +79,53 @@ class SignIn extends React.Component {
         email: values.email,
         passwordHash: values.password,
       }),
-    }).then(res => console.log(res));
-    console.log(values.email)
-
+    }).then(res => {console.log(res);
+    if (res.status === 200) {
+      fakeAuth.authenticate(() => {
+        this.setState({redirect: true});
+      });
+      localStorage.setItem('authToken', '123')
+    }
+      //this.setState({incorrect: false, redirect: true});
+    else
+      this.setState({redirect: false, incorrect: true});
+    })
   };
 
   render() {
     const { classes } = this.props;
     const { sent } = this.state;
+    let text;
 
-    return (
+    if (this.state.redirect)
+      return <Redirect push to="/Feed"/>;
+    if (this.state.incorrect)
+      text = <Typography variant="body2" align="center" className={classes.text}>
+              {'Incorrect Login. '}
+                <Link
+                    align="center"
+                    underline="always"
+                    className={classes.text}
+                    component={LinkRouter}
+                    to={"/forgotpassword"}
+                >
+                  Forgot Password?
+                </Link>
+              </Typography>;
+    else
+      text = <Typography variant="body2" align="center">
+              {'Not a member yet? '}
+                <Link
+                    align="center"
+                    underline="always"
+                    component={LinkRouter}
+                    to={"/signup"}
+                >
+                  Sign Up here
+                </Link>
+              </Typography>;
+
+  return (
         <React.Fragment>
           <AppAppBar />
           <AppForm>
@@ -78,12 +133,7 @@ class SignIn extends React.Component {
               <Typography variant="h3" gutterBottom marked="center" align="center">
                 Sign In
               </Typography>
-              <Typography variant="body2" align="center">
-                {'Not a member yet? '}
-                <Link href="/premium-themes/onepirate/sign-up" align="center" underline="always">
-                  Sign Up here
-                </Link>
-              </Typography>
+              {text}
             </React.Fragment>
             <Form
                 onSubmit={this.handleSubmit}
@@ -138,7 +188,11 @@ class SignIn extends React.Component {
               )}
             </Form>
             <Typography align="center">
-              <Link underline="always" href="/premium-themes/onepirate/forgot-password">
+              <Link
+                  underline="always"
+                  component={LinkRouter}
+                  to={"/forgotpassword"}
+              >
                 Forgot password?
               </Link>
             </Typography>
@@ -150,7 +204,7 @@ class SignIn extends React.Component {
 }
 
 SignIn.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default compose(

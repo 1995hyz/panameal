@@ -6,6 +6,7 @@ import Link from '@material-ui/core/Link';
 import LayoutBody from '../components/LayoutBody';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
+import {Link as LinkRouter} from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -77,7 +78,7 @@ function ProductHowItWorks(props) {
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  Posts Everyday
                 </Typography>
               </div>
             </Grid>
@@ -90,7 +91,7 @@ function ProductHowItWorks(props) {
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so be quick.
+                  Save with Restaurants.
                 </Typography>
               </div>
             </Grid>
@@ -103,8 +104,7 @@ function ProductHowItWorks(props) {
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  {'Let everyone know what you want to eat and will eat'}
                 </Typography>
               </div>
             </Grid>
@@ -116,7 +116,7 @@ function ProductHowItWorks(props) {
           variant="contained"
           className={classes.button}
           component={linkProps => (
-            <Link {...linkProps} href="/sign-up" variant="button" />
+            <Link {...linkProps} component={LinkRouter} to={"/signup"} variant="button" />
           )}
         >
           Get started
