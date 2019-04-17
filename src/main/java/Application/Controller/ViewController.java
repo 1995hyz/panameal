@@ -1,8 +1,6 @@
 package Application.Controller;
 
-import Application.model.Post;
-import Application.model.PostRepository;
-import Application.model.PostRequestForm;
+import Application.model.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,6 +21,8 @@ public class ViewController {
 
     @Autowired
     private PostRepository postRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping("/view_post")
     public ResponseEntity<ArrayList<Post>> viewPost(@RequestBody PostRequestForm postRequest) {
@@ -53,5 +53,15 @@ public class ViewController {
         List postL = postList.subList(0, postRequest.getAmount());
         ArrayList<Post> finalPost = new ArrayList<Post>(postL);
         return new ResponseEntity<>(finalPost, HttpStatus.OK);
+    }
+    @RequestMapping("/view_profile")
+    public ResponseEntity<User> viewUser(@RequestBody String email) {
+        Optional<User> currUser = userRepository.findByEmail(email);
+        if(currUser.isEmpty()) {
+            return new ResponseEntity <>(null, HttpStatus.UNAUTHORIZED);
+        }
+        else {
+            return new ResponseEntity<>(currUser.get(), HttpStatus.OK);
+        }
     }
 }
