@@ -27,7 +27,11 @@ public class PostController {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         else {
-            Post newPost = new Post(currUser.get().getId(), postForm.getContent(), postForm.getPrivacy_level());
+            int privacyLevel = postForm.getPrivacy_level();
+            if( privacyLevel != 1 && privacyLevel != 2 && privacyLevel != 3){
+                privacyLevel = 1;
+            }
+            Post newPost = new Post(currUser.get().getId(), postForm.getContent(), privacyLevel);
             postRepository.save(newPost);
             return new ResponseEntity<>(null, HttpStatus.OK);
         }
