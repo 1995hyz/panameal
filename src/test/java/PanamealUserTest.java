@@ -1,7 +1,9 @@
 import Application.model.LoginForm;
 import Application.model.Post;
+import Application.model.SignUpForm;
 import Application.model.User;
 import org.junit.Test;
+import org.springframework.http.ResponseEntity;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -37,6 +39,22 @@ public class PanamealUserTest {
         assertEquals(content, testPost.getContent());
         assertEquals(privacy_level, testPost.getPrivacy_level());
         testPost = null;
+    }
+
+    @Test
+    public void testSignUp(){
+        String email = "tmp@test.com";
+        String username = "test";
+        String password = "1234567890";
+        SignUpForm testSignUpForm = new SignUpForm();
+        testSignUpForm.setEmail(email);
+        testSignUpForm.setUsername(username);
+        testSignUpForm.setPasswordHash(password);
+        User testUser = new User(testSignUpForm.getEmail(), testSignUpForm.getUsername(), testSignUpForm.getPasswordHash());
+        assertEquals(email,testUser.getEmail());
+        assertEquals(username,testUser.getUsername());
+        assertEquals(password,testUser.getPasswordHash());
+        //ResponseEntity<> tmp = ResponseEntity<User> signUpUser(testSignUpForm);
     }
     /*public void addUser() {
         assert(PanamealUser.addUser("hao2@cooper.edu", "hao2", "121232342") == 1);
