@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ImageGridList from './ImageGridList';
+import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '../components/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
 import {Link as LinkRouter} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import {Redirect} from 'react-router-dom';
 
 const styles = theme => ({
     title: {
@@ -33,17 +35,31 @@ const styles = theme => ({
     },
     linkSecondary: {
         color: theme.palette.secondary.main,
+        marginTop: 6,
     },
 });
 
 
-function FeedBar(props) {
-    const { classes } = props;
-    return (
+class FeedBar extends React.Component{
+    state = {
+        redirect: false,
+    };
+
+    handleLogOut = () => {
+        console.log('logout');
+        this.setState({redirect: true})
+    };
+    render() {
+        const {classes} = this.props;
+        if (this.state.redirect) {
+            localStorage.removeItem('authToken');
+            return <Redirect push to="/" refresh={true}/>;
+        }
+        return (
         <div>
             <AppBar position="fixed">
                 <Toolbar className={classes.toolbar}>
-                    <div className={classes.left} />
+                    <div className={classes.left}/>
                     <Link
                         variant="h6"
                         underline="none"
@@ -59,18 +75,27 @@ function FeedBar(props) {
                             variant="h6"
                             underline="none"
                             className={classes.rightLink}
-                            component={LinkRouter}
-                            to={"/Profile"}
+                            component={Button}
+                            onClick={this.handleLogOut}
                         >
-                            {'User'}
+                            {'Sign Out'}
+                        </Link>
+                        <Link
+                            variant="h6"
+                            underline="none"
+                            className={classNames(classes.rightLink, classes.linkSecondary)}
+                            component={LinkRouter}
+                            to={"/profile"}
+                        >
+                            {'Profile'}
                         </Link>
                     </div>
                 </Toolbar>
             </AppBar>
-            <div className={classes.placeholder} />
-            <ImageGridList/>
+            <div className={classes.placeholder}/>
         </div>
-    );
+        );
+    };
 }
 
 FeedBar.propTypes = {

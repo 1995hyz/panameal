@@ -24,4 +24,5 @@ public class LoginForm {
         this.email = email;
         this.passwordHash = passwordHash;
     }
+    public LoginForm() {}
 }
