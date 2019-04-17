@@ -16,8 +16,7 @@ import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
 import { Redirect } from 'react-router-dom';
 import {Link as LinkRouter} from 'react-router-dom';
-
-const url = 'http://localhost:8080';
+import url from './modules/url';
 
 const fakeAuth = {
   isAuthenticated: false,
@@ -82,11 +81,10 @@ class SignIn extends React.Component {
     }).then(res => {console.log(res);
     if (res.status === 200) {
       fakeAuth.authenticate(() => {
-        this.setState({redirect: true});
+        this.setState({redirect: true, incorrect: false});
       });
-      localStorage.setItem('authToken', '123')
+      localStorage.setItem('authToken', values.email)
     }
-      //this.setState({incorrect: false, redirect: true});
     else
       this.setState({redirect: false, incorrect: true});
     })

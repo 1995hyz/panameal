@@ -16,6 +16,7 @@ import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
 import { Redirect, Link as LinkRouter} from 'react-router-dom';
+import url from './modules/url';
 
 const styles = theme => ({
   form: {
@@ -29,8 +30,6 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 2,
   },
 });
-
-const url = 'http://localhost:8080';
 
 
 class SignUp extends React.Component {

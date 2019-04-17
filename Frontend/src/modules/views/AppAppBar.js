@@ -6,7 +6,6 @@ import Link from '@material-ui/core/Link';
 import AppBar from '../components/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
 import {Link as LinkRouter} from 'react-router-dom';
-import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   title: {

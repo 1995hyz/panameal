@@ -5,13 +5,15 @@ import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import { withStyles } from '@material-ui/core/styles';
 import AppFooter from './modules/views/AppFooter';
-import AppAppBar from './modules/views/AppAppBar';
+import FeedBar from './modules/views/FeedBar';
 import AppForm from './modules/views/AppForm';
 import FormButton from "./modules/form/FormButton";
-import {Form} from "react-final-form";
+import {Field, Form} from "react-final-form";
 import {Typography} from "@material-ui/core";
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField'
+import RFTextField from "./modules/form/RFTextField";
 
 const styles = theme => ({
     form: {
@@ -38,7 +40,13 @@ class Profile extends React.Component {
     state = {
         sent: false,
         redirect: false,
-        username: "Kevinlin6543"
+        username: "Kevinlin6543",
+        email: "kevin.lin6543@gmail.com",
+        name: "Kevin Lin",
+        bio: "amazing front end developer"
+    };
+    handleChange = name => event => {
+        this.setState({ [name]: event.target.value });
     };
 
     render() {
@@ -46,16 +54,39 @@ class Profile extends React.Component {
         const { sent } = this.props;
         return (
             <React.Fragment>
-                <AppAppBar />
+                <FeedBar />
                 <AppForm>
                     <Grid container spacing={24}>
                         <Grid item xs={12} sm={6} key={22}>
                             <Avatar alt="Stock image" src={process.env.PUBLIC_URL+"dude.jpg"} className={classes.bigAvatar} />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Typography  variant="h7" component="h1">
-                                Username
-                            </Typography>
+                            <form className={classes.container} noValidate autoComplete="off">
+                                <TextField
+                                    id="name"
+                                    label="Name"
+                                    className={classes.textField}
+                                    value={this.state.name}
+                                    onChange={this.handleChange('name')}
+                                    margin="normal"
+                                />
+                                <TextField
+                                    id="username"
+                                    label="Username"
+                                    className={classes.textField}
+                                    value={this.state.username}
+                                    onChange={this.handleChange('username')}
+                                    margin="normal"
+                                />
+                                <TextField
+                                    id="email"
+                                    label="Email"
+                                    className={classes.textField}
+                                    value={this.state.email}
+                                    onChange={this.handleChange('email')}
+                                    margin="normal"
+                                />
+                            </form>
                         </Grid>
                     </Grid>
                     <Form
