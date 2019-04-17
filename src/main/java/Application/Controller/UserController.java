@@ -19,5 +19,4 @@ public class UserController {
         @PathVariable("username") String username, @RequestBody User user) {
         return ResponseEntity.ok(HttpStatus.OK);
     }
-
 }

@@ -42,7 +42,7 @@ public class ViewController {
             Post post = (Post)iterator.next();
             System.out.println((post.getContent()));
         }*/
-        ArrayList<Post> postList= new ArrayList<Post>();
+        ArrayList<Post> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
         for(Iterator iterator = results.iterator(); iterator.hasNext();) {
             Post post = (Post) iterator.next();
@@ -50,7 +50,13 @@ public class ViewController {
             //System.out.println(post.getContent());
         }
         Collections.reverse(postList);
-        List postL = postList.subList(0, postRequest.getAmount());
+        List postL;
+        if(postRequest.getAmount() > postList.size()) {
+            postL = postList;
+        }
+        else {
+            postL = postList.subList(0, postRequest.getAmount());
+        }
         ArrayList<Post> finalPost = new ArrayList<Post>(postL);
         return new ResponseEntity<>(finalPost, HttpStatus.OK);
     }

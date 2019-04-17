@@ -1,21 +1,21 @@
 package Application.model;
 
 public class PostRequestForm {
-    private String user_id;
+    private String email;
     private Integer amount;
 
     public PostRequestForm() {}
-    public PostRequestForm(String user_id, Integer amount) {
-        this.user_id = user_id;
+    public PostRequestForm(String email, Integer amount) {
+        this.email = email;
         this.amount = amount;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Integer getAmount() {
