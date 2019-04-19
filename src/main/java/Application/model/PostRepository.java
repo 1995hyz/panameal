@@ -2,6 +2,7 @@ package Application.model;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface PostRepository extends CrudRepository<Post, Integer>  {
+import java.util.Optional;
 
+public interface PostRepository extends CrudRepository<Post, Integer>  {
 }
