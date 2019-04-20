@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c47c60e-bd2a-4684-90ba-859a04c58d3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application/model/ReturnPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Controller/ViewController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Application/model/PostRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Application/model/Post.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Application/Controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="70" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="73" />
+              <caret line="22" column="70" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Application/Controller/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+            <state relative-caret-position="816">
+              <caret line="51" column="72" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1526#1538#0" expanded="true" />
@@ -106,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Application/model/ReturnPost.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding>
                 <element signature="e#295#296#0" expanded="true" />
                 <element signature="e#327#328#0" expanded="true" />
@@ -343,9 +341,9 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555724896782" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555725317786" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
@@ -367,9 +365,69 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MainApplication (2)">
-    <configuration name="MainApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.MainApplication (1)">
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Panameal" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Panameal" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="panameal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Application.MainApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Panameal" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Application.*" />
@@ -409,6 +467,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.MainApplication (1)" />
         <item itemvalue="Spring Boot.MainApplication (2)" />
         <item itemvalue="Spring Boot.MainApplication" />
         <item itemvalue="Spring Boot.MainApplication" />
@@ -436,7 +495,7 @@
       <workItem from="1555512996426" duration="2273000" />
       <workItem from="1555515515618" duration="995000" />
       <workItem from="1555529616320" duration="1985000" />
-      <workItem from="1555698586188" duration="7579000" />
+      <workItem from="1555698586188" duration="7919000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Post">
       <created>1555386731462</created>
@@ -487,11 +546,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555705151756</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated View Post to include username">
+      <created>1555724934564</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555724934564</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51903000" />
+    <option name="totallyTimeSpent" value="52243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,9 +570,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.27941176" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.27941176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -530,7 +595,7 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49761525" weight="0.3281372" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" sideWeight="0.49960256" weight="0.3281372" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.75" visible="true" weight="0.22837101" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.75" visible="true" weight="0.22837101" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -555,7 +620,8 @@
     <MESSAGE value="Add Unit Test" />
     <MESSAGE value="Added to Profile Page Fetching" />
     <MESSAGE value="Added Profile Page Fetching in Backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Profile Page Fetching in Backend" />
+    <MESSAGE value="Updated View Post to include username" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated View Post to include username" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -664,7 +730,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Application/model/PostRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -691,7 +757,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Application/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="70" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="73" />
+          <caret line="22" column="70" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -739,7 +805,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Application/model/Post.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -749,7 +815,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Application/model/ReturnPost.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
             <element signature="e#295#296#0" expanded="true" />
             <element signature="e#327#328#0" expanded="true" />
@@ -765,8 +831,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application/Controller/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        <state relative-caret-position="816">
+          <caret line="51" column="72" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1526#1538#0" expanded="true" />
