@@ -25,29 +25,14 @@ public class ViewController {
     private UserRepository userRepository;
 
     @RequestMapping("/view_post")
-    public ResponseEntity<ArrayList<Post>> viewPost(@RequestBody PostRequestForm postRequest) {
-        /*try {
-            factory = new Configuration().configure().buildSessionFactory();
-        }
-        catch (Throwable e) {
-            e.printStackTrace();
-        }
-        String query = "SELECT * FROM post WHERE user_id != " + postRequest.getUser_id() +
-                " LIMIT " + postRequest.getAmount() + " ;";
-        Session session = factory.openSession();
-        Query q = session.createQuery(query);
-        List result = q.list();
-        for(Iterator iterator = result.iterator(); iterator.hasNext();) {
-            iterator.next();
-            Post post = (Post)iterator.next();
-            System.out.println((post.getContent()));
-        }*/
-        ArrayList<Post> postList= new ArrayList<>();
+    public ResponseEntity<ArrayList<ReturnPost>> viewPost(@RequestBody PostRequestForm postRequest) {
+
+        ArrayList<ReturnPost> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
         for(Iterator iterator = results.iterator(); iterator.hasNext();) {
             Post post = (Post) iterator.next();
-            postList.add(post);
-            //System.out.println(post.getContent());
+            ReturnPost rp = new ReturnPost(post, userRepository.findById(post.getUser_id()).get().getUsername());
+            postList.add(rp);
         }
         Collections.reverse(postList);
         List postL;
@@ -57,7 +42,7 @@ public class ViewController {
         else {
             postL = postList.subList(0, postRequest.getAmount());
         }
-        ArrayList<Post> finalPost = new ArrayList<Post>(postL);
+        ArrayList<ReturnPost> finalPost = new ArrayList<ReturnPost>(postL);
         return new ResponseEntity<>(finalPost, HttpStatus.OK);
     }
     @RequestMapping("/view_profile")
