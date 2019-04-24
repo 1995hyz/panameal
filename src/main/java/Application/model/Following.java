@@ -13,12 +13,20 @@ public class Following {
     @Column()
     private Integer user_id;
 
-    public Following(Integer user_id) {
+    @Column()
+    private Integer followto;
+
+    public Following(Integer user_id, Integer followto) {
         this.user_id = user_id;
+        this.followto = followto;
     }
 
     public Integer getFollowing_id() {
         return following_id;
+    }
+
+    public void setFollowing_id(Integer following_id) {
+        this.following_id = following_id;
     }
 
     public Integer getUser_id() {
@@ -27,5 +35,13 @@ public class Following {
 
     public void setUser_id(Integer user_id) {
         this.user_id = user_id;
+    }
+
+    public Integer getFollowto() {
+        return followto;
+    }
+
+    public void setFollowto(Integer followto) {
+        this.followto = followto;
     }
 }

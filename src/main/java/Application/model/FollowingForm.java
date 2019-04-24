@@ -1,24 +1,27 @@
 package Application.model;
 
 public class FollowingForm {
+    private String email;
+    private String usernameFollowing;
 
-    private String user_email;
-    private int following_id;
-
-    public String getUser_email() {
-        return user_email;
+    public FollowingForm(String email, String usernameFollwing) {
+        this.email = email;
+        this.usernameFollowing = usernameFollwing;
     }
 
-    public void setUser_email(String user_email) {
-        this.user_email = user_email;
+    public String getEmail() {
+        return email;
     }
 
-    public int getFollowing_id() {
-        return following_id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setFollowing_id(int following_id) {
-        this.following_id = following_id;
+    public String getUsernameFollowing() {
+        return usernameFollowing;
     }
 
+    public void setUsernameFollowing(String usernameFollowing) {
+        this.usernameFollowing = usernameFollowing;
+    }
 }

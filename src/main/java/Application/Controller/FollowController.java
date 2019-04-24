@@ -18,15 +18,16 @@ public class FollowController {
     private FollowingRepository followingRepository;
 
     @RequestMapping(value = "/following", method = RequestMethod.POST)
-    public ResponseEntity addFollowing(@RequestBody FollowingForm followingForm) {
-        Optional<User> currUser = userRepository.findByEmail(followingForm.getUser_email());
-        if(currUser.isEmpty()) {
-            return new ResponseEntity (null, HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<Optional> addFollowing(FollowingForm followingForm) {
+        Optional<User> currUser = userRepository.findByEmail(followingForm.getEmail());
+        Optional<User> followingUser = userRepository.findByUsername(followingForm.getUsernameFollowing());
+        if(currUser.isEmpty() || followingUser.isEmpty()) {
+            return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
         }
-        else{
-            Following following = new Following(currUser.get().getId());
-            followingRepository.save(following);
-            return new ResponseEntity (null, HttpStatus.OK);
+        else {
+            Following newFollowing = new Following(currUser.get().getId(), followingUser.get().getId());
+            followingRepository.save(newFollowing);
+            return new ResponseEntity<>(null, HttpStatus.OK);
         }
     }
 }
