@@ -62,8 +62,8 @@ class SignUp extends React.Component {
       },
       body: JSON.stringify({
         email: values.email,
-        username: values.username,
         passwordHash: values.password,
+        username: values.username,
       }),
     }).then(res => {
       console.log(res);
@@ -107,36 +107,15 @@ class SignUp extends React.Component {
             >
               {({ handleSubmit, submitting }) => (
                   <form onSubmit={handleSubmit} className={classes.form} noValidate>
-                    <Grid container spacing={16}>
-                      <Grid item xs={12} sm={6}>
-                        <Field
-                            autoFocus
-                            component={RFTextField}
-                            autoComplete="fname"
-                            fullWidth
-                            label="First name"
-                            name="firstName"
-                        />
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <Field
-                            component={RFTextField}
-                            autoComplete="lname"
-                            fullWidth
-                            label="Last name"
-                            name="lastName"
-                        />
-                      </Grid>
-                    </Grid>
                     <Field
                         autoComplete="username"
                         component={RFTextField}
                         disabled={submitting || sent}
                         fullWidth
+                        required
                         label="Username"
                         margin="normal"
                         name="username"
-                        required
                     />
                     <Field
                         autoComplete="email"

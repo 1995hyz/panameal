@@ -1,3 +1,3 @@
-const url = 'http://199.98.27.119:6001';
+const url = 'http://localhost:8080';
 
 export default url;

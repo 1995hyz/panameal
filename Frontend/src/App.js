@@ -6,6 +6,7 @@ import SignUp from './SignUp';
 import ForgotPassword from './ForgotPassword';
 import Feed from './Feed';
 import Profile from './Profile';
+import OtherProfile from './OtherProfile';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {PrivateRoute} from './modules/components/PrivateRoute';
 
@@ -16,6 +17,8 @@ class App extends Component {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={Feed} />
+                        <Route exact path="/home" component={Home} />
+                        <Route exact path="/user/:username" component={OtherProfile} />
                         <PrivateRoute exact path="/profile" component={Profile} />
                         <PrivateRoute exact path="/feed" component={Feed} />
                         <Route component={Feed} />
@@ -32,6 +35,7 @@ class App extends Component {
                         <Route exact path="/signup" component={SignUp} />
                         <Route exact path="/forgotpassword" component={ForgotPassword} />
                         <PrivateRoute exact path="/profile" component={Profile} />
+                        <Route exact path="/user/:username" component={OtherProfile} />
                         <PrivateRoute exact path="/feed" component={Feed} />
                         <Route component={Home} />
                     </Switch>

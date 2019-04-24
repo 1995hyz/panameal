@@ -59,7 +59,6 @@ const styles = theme => ({
 
 class FeedData extends React.Component {
     state = {
-        col: 0,
         data: [],
     };
     getPost = () => {
@@ -75,44 +74,30 @@ class FeedData extends React.Component {
             }),
         })
             .then(response => {
-                if (response.status === 200)
+                if (response.status === 200) {
                     return response.json();
+                }
             })
             .then(myJson =>{
+                console.log(myJson);
                 this.setState({data: myJson});
             });
     };
+
+    componentWillMount() {
+        this.getPost();
+    }
+
+    handleLike = index => {
+        console.log(index);
+    };
     render() {
         const { classes } = this.props;
-        this.getPost();
         var elements = [];
-        for (var i = 0; i < this.state.data.length; i++) {
+        for (let i = 0; i < this.state.data.length; i++) {
             // console.log(this.state.data[i].content);
             elements.push(
-                <Card className={classes.card}>
-                    <CardHeader
-                        avatar={
-                            <Avatar aria-label="Recipe" className={classes.avatar}>
-                                P
-                            </Avatar>
-                        }
-                        title={this.state.data[i].user_id}
-                        subheader={this.state.data[i].post_time}
-                    />
-                    <CardContent>
-                        <Typography component="p">
-                            {this.state.data[i].content}
-                        </Typography>
-                    </CardContent>
-                    <CardActions className={classes.actions} disableActionSpacing>
-                        <IconButton aria-label="Like">
-                            <FavoriteIcon/>
-                        </IconButton>
-                        <IconButton aria-label="Share">
-                            <ShareIcon/>
-                        </IconButton>
-                    </CardActions>
-                </Card>
+
             );
         }
         return(
@@ -122,7 +107,33 @@ class FeedData extends React.Component {
                         <Typography className={classes.title} variant="h6" color="inherit">
                             Feed
                         </Typography>
-                        {elements}
+                        {this.state.data.map((item, index) =>(
+                            <Card className={classes.card} key={index}>
+                                <CardHeader
+                                    avatar={
+                                        <Avatar aria-label="Recipe" className={classes.avatar}>
+                                            {item.username.charAt(0)}
+                                        </Avatar>
+                                    }
+                                    title={item.username}
+                                    subheader={item.post.post_time}
+                                />
+                                <CardContent>
+                                    <Typography component="p">
+                                        {item.post.content}
+                                    </Typography>
+                                </CardContent>
+                                <CardActions className={classes.actions} disableActionSpacing>
+                                    <IconButton aria-label="Like" onClick={()=>this.handleLike(index)}>
+                                        <FavoriteIcon />
+                                    </IconButton>
+                                    <IconButton aria-label="Share">
+                                        <ShareIcon/>
+                                    </IconButton>
+                                </CardActions>
+                            </Card>
+                            )
+                        )}
                     </Paper>
                 </LayoutBody>
             </div>
