@@ -23,6 +23,7 @@ import {FormControl, FormControlLabel, FormLabel, RadioGroup} from '@material-ui
 import url from './modules/url';
 
 
+
 const styles = theme => ({
     div: {
         top: '84vh',
@@ -63,8 +64,6 @@ class Feed extends React.Component {
         this.setState({open: false})
     };
     handleSubmit = values => {
-        console.log(values.privacy);
-        console.log(values.post);
         values.submitting = true;
         fetch(url + '/create/post', {
             method: 'POST',

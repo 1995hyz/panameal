@@ -45,14 +45,14 @@ class FeedBar extends React.Component{
     };
 
     handleLogOut = () => {
-        console.log('logout');
         this.setState({redirect: true})
     };
     render() {
         const {classes} = this.props;
         if (this.state.redirect) {
             localStorage.removeItem('authToken');
-            return <Redirect push to="/" refresh={true}/>;
+            window.location.reload();
+            //return <Redirect push to="/home" refresh={true}/>;
         }
         return (
         <div>
@@ -64,6 +64,7 @@ class FeedBar extends React.Component{
                         underline="none"
                         color="inherit"
                         className={classes.title}
+                        component={LinkRouter}
                         to={"/"}
                     >
                         {'Panameal'}

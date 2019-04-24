@@ -17,11 +17,13 @@ public class UserController {
     @Autowired
     private PostRepository postRepository;
 
-    @RequestMapping(value="/user/{username}", method= RequestMethod.POST)
-    public ResponseEntity<Profile> getUserProfile(
-        @PathVariable("username") String username, @RequestBody User user) {
+    @RequestMapping(value="/user", method= RequestMethod.POST)
+    public ResponseEntity<Profile> getUserProfile(@RequestBody String username) {
         Optional<User> currUser = userRepository.findByUsername(username);
-        UserProfile userProfile = new UserProfile(currUser.get().getFirstname(),currUser.get().getLastname(),currUser.get().getUsername());
+        if(currUser.isEmpty()) {
+            return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
+        }
+        UserProfile userProfile = new UserProfile(currUser.get().getFirstname(), currUser.get().getLastname(), currUser.get().getUsername());
         ArrayList<Post> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
 
