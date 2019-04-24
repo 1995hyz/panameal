@@ -1,11 +1,10 @@
 import React from 'react';
 import withRoot from './modules/withRoot';
 // --- Post bootstrap -----
-import PropTypes, {number} from 'prop-types';
+import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import FeedBar from './modules/views/FeedBar';
-import ImageGridList from "./modules/views/ImageGridList";
 import AppFooter from "./modules/views/AppFooter";
 import LayoutBody from "./modules/components/LayoutBody";
 import Tooltip from '@material-ui/core/Tooltip';
@@ -20,7 +19,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {Radio} from 'final-form-material-ui';
 import FeedData from './modules/views/FeedData';
-import {FormControl, FormControlLabel, FormLabel, RadioGroup, Paper, Typography, GridListTile} from '@material-ui/core';
+import {FormControl, FormControlLabel, FormLabel, RadioGroup} from '@material-ui/core';
 import url from './modules/url';
 
 

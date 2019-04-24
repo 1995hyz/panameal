@@ -3,17 +3,15 @@ import withRoot from './modules/withRoot';
 import React from 'react';
 import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import AppFooter from './modules/views/AppFooter';
 import FeedBar from './modules/views/FeedBar';
 import AppForm from './modules/views/AppForm';
 import FormButton from "./modules/form/FormButton";
-import {Field, Form} from "react-final-form";
-import {Typography} from "@material-ui/core";
+import {Form} from "react-final-form";
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField'
-import RFTextField from "./modules/form/RFTextField";
 
 const styles = theme => ({
     form: {
@@ -32,9 +30,6 @@ const styles = theme => ({
         height: 200,
     },
 });
-
-
-const url = 'http://localhost:8080';
 
 class Profile extends React.Component {
     state = {
