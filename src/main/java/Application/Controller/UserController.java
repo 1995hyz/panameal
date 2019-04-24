@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private PostRepository postRepository;
 
-    @RequestMapping(value="/{username}", method= RequestMethod.POST)
+    @RequestMapping(value="/user/{username}", method= RequestMethod.POST)
     public ResponseEntity<Profile> getUserProfile(
         @PathVariable("username") String username, @RequestBody User user) {
         Optional<User> currUser = userRepository.findByUsername(username);
