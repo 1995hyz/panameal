@@ -18,7 +18,7 @@ public class FollowController {
     private FollowingRepository followingRepository;
 
     @RequestMapping(value = "/following", method = RequestMethod.POST)
-    public ResponseEntity<Optional> addFollowing(FollowingForm followingForm) {
+    public ResponseEntity<Optional> addFollowing(@RequestBody FollowingForm followingForm) {
         Optional<User> currUser = userRepository.findByEmail(followingForm.getEmail());
         Optional<User> followingUser = userRepository.findByUsername(followingForm.getUsernameFollowing());
         if(currUser.isEmpty() || followingUser.isEmpty()) {
