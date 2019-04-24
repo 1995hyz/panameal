@@ -1,5 +1,5 @@
 // --- Post bootstrap -----
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Home from './Home';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
@@ -11,7 +11,6 @@ import {PrivateRoute} from './modules/components/PrivateRoute';
 
 class App extends Component {
     render() {
-        var positions;
         if (localStorage.getItem('authToken')) {
             return (
                 <Router>
