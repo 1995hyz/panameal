@@ -10,14 +10,14 @@ public class Follower {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer follower_id;
 
-    @Column()
-    private Integer user_id;
+    @Column(name = "user_id")
+    private Integer userId;
 
-    @Column
+    @Column()
     private Integer followby;
 
-    public Follower(Integer user_id, Integer followby) {
-        this.user_id = user_id;
+    public Follower(Integer userId, Integer followby) {
+        this.userId = userId;
         this.followby = followby;
     }
 
@@ -29,12 +29,12 @@ public class Follower {
         this.follower_id = follower_id;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getFollowby() {
