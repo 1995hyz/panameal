@@ -7,6 +7,7 @@ import {orange} from '@material-ui/core/colors';
 import url from '../../modules/url';
 import LayoutBody from "../components/LayoutBody";
 import Paper from "../components/Paper";
+import FeedTile from '../components/FeedTile';
 
 const styles = theme => ({
     card: {
@@ -93,13 +94,6 @@ class FeedData extends React.Component {
     };
     render() {
         const { classes } = this.props;
-        var elements = [];
-        for (let i = 0; i < this.state.data.length; i++) {
-            // console.log(this.state.data[i].content);
-            elements.push(
-
-            );
-        }
         return(
             <div className={classes.root}>
                 <LayoutBody margin marginBottom width="medium">
@@ -108,7 +102,15 @@ class FeedData extends React.Component {
                             Feed
                         </Typography>
                         {this.state.data.map((item, index) =>(
-                            <Card className={classes.card} key={index}>
+                            <FeedTile
+                                className={classes}
+                                username={item.username}
+                                content={item.post.content}
+                                postTime={item.post.post_time}
+                                postID={item.post.post_id}
+                                handleLikeButton={this.handleLike}
+                            />
+                            /*<Card className={classes.card} key={index}>
                                 <CardHeader
                                     avatar={
                                         <Avatar aria-label="Recipe" className={classes.avatar}>
@@ -132,8 +134,8 @@ class FeedData extends React.Component {
                                     </IconButton>
                                 </CardActions>
                             </Card>
-                            )
-                        )}
+                            )*/
+                        ))}
                     </Paper>
                 </LayoutBody>
             </div>
