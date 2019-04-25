@@ -11,8 +11,20 @@ import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import url from "./modules/url";
 import Typography from "./modules/components/Typography";
+import FeedTile from './modules/components/FeedTile';
+import {Card, CardActions, CardContent, CardHeader} from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import ShareIcon from '@material-ui/icons/Share';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const styles = theme => ({
+    card: {
+        marginTop: '2.5vh',
+        marginBottom: '2.5vh',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: '50vw',
+    },
     form: {
         marginTop: theme.spacing.unit * 6,
     },
@@ -50,7 +62,11 @@ class OtherProfile extends React.Component {
             })
             .then(myJson =>{
                 console.log(myJson);
-                this.setState({data: myJson});
+                this.setState({
+                    posts: myJson.post,
+                    fname: myJson.user.firstname,
+                    lname: myJson.user.lastname,
+                });
             });
     };
     state = {
@@ -58,17 +74,19 @@ class OtherProfile extends React.Component {
         redirect: false,
         username: this.props.match.params.username,
         email: "",
-        name: "",
-        bio: ""
+        fname: "",
+        lname: "",
+        posts: [],
     };
     componentWillMount() {
         this.getUser();
     }
-
+    handleLike = index => {
+        console.log(index);
+    };
 
     render() {
         const { classes } = this.props;
-        const { sent } = this.props;
         return (
             <React.Fragment>
                 <FeedBar />
@@ -83,6 +101,41 @@ class OtherProfile extends React.Component {
                             </Typography>
                         </Grid>
                     </Grid>
+                    {this.state.posts.map((post, index) => (
+                        <FeedTile
+                            className={classes}
+                            username={this.state.username}
+                            content={post.content}
+                            postTime={post.post_time}
+                            postID={post.post_id}
+                            handleLikeButton={this.handleLike}
+                        />
+                        /*<Card className={classes.card} key={index}>
+                            <CardHeader
+                                avatar={
+                                    <Avatar aria-label="Recipe" className={classes.avatar}>
+                                        {this.state.username.charAt(0)}
+                                    </Avatar>
+                                }
+                                title={this.state.username}
+                                subheader={post.post_time}
+                            />
+                            <CardContent>
+                                <Typography component="p">
+                                    {post.content}
+                                </Typography>
+                            </CardContent>
+                            <CardActions className={classes.actions} disableActionSpacing>
+                                <IconButton aria-label="Like">
+                                    <FavoriteIcon />
+                                </IconButton>
+                                <IconButton aria-label="Share">
+                                    <ShareIcon/>
+                                </IconButton>
+                            </CardActions>
+                        </Card>*/
+                        )
+                    )}
                 </AppForm>
                 <AppFooter />
             </React.Fragment>
