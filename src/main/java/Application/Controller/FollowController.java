@@ -16,6 +16,8 @@ public class FollowController {
     private UserRepository userRepository;
     @Autowired
     private FollowingRepository followingRepository;
+    @Autowired
+    private FollowerRepository followerRepository;
 
     @RequestMapping(value = "/following", method = RequestMethod.POST)
     public ResponseEntity<Optional> addFollowing(@RequestBody FollowingForm followingForm) {
@@ -26,7 +28,9 @@ public class FollowController {
         }
         else {
             Following newFollowing = new Following(currUser.get().getId(), followingUser.get().getId());
+            Follower newFollower = new Follower(followingUser.get().getId(), currUser.get().getId());
             followingRepository.save(newFollowing);
+            followerRepository.save(newFollower);
             return new ResponseEntity<>(null, HttpStatus.OK);
         }
     }
