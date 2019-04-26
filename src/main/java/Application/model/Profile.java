@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class Profile {
     private UserProfile user;
     private ArrayList<Post> post;
+    private Integer followFlag;
 
-    public Profile(UserProfile user, ArrayList<Post> post){
+    public Profile(UserProfile user, ArrayList<Post> post, Integer followFlag){
         this.user = user;
         this.post = post;
+        this.followFlag = followFlag;
     }
 
     public void setUser(UserProfile user){
@@ -25,5 +27,13 @@ public class Profile {
 
     public ArrayList<Post> getPost(){
         return post;
+    }
+
+    public Integer getFollowFlag() {
+        return followFlag;
+    }
+
+    public void setFollowFlag(Integer followFlag) {
+        this.followFlag = followFlag;
     }
 }
