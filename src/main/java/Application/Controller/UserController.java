@@ -28,26 +28,32 @@ public class UserController {
         }
 
         int followFlag = 0;
-        Iterable<Following> resultsFollow = followingRepository.findAllByUserId( new ArrayList<> (currUser.get().getId()));
+        Optional<Following> follow = followingRepository.findByUserIdAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
+        if(!follow.isEmpty()){
+            followFlag = 1;
+        }
+        /*Iterable<Following> resultsFollow = followingRepository.findAllByUserId( new ArrayList<> (currUser.get().getId()));
         for(Iterator iterator=resultsFollow.iterator(); iterator.hasNext();) {
             Following following = (Following) iterator.next();
             if (following.getFollowto().equals(currUser.get().getId())) {
                 followFlag = 1;
             }
-        }
+        }*/
 
         UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(), viewUser.get().getUsername());
-        ArrayList<Post> postList= new ArrayList<>();
+        ArrayList<ReturnPost> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
 
         for(Iterator iter = results.iterator(); iter.hasNext();) {
             Post post = (Post) iter.next();
             if(post.getUser_id().equals(viewUser.get().getId())){
-                postList.add(post);
+                System.out.println(post.getUser_id());
+                ReturnPost rp = new ReturnPost(post, followPage.getUsername());
+                postList.add(rp);
             }
         }
         Collections.reverse(postList);
-        ArrayList<Post> finalPost = new ArrayList<>(postList);
+        ArrayList<ReturnPost> finalPost = new ArrayList<>(postList);
         Profile profile = new Profile(userProfile,finalPost, followFlag);
 
         return new ResponseEntity<>(profile,HttpStatus.OK);
