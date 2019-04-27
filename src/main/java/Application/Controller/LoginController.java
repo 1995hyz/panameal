@@ -25,7 +25,7 @@ public class LoginController {
             return new ResponseEntity <>(null, HttpStatus.UNAUTHORIZED);
         }
         else {
-            if(currUser.get().getPasswordHash().equals(loginForm.getPasswordHash())) {
+            if(currUser.get().checkPassword(loginForm.getPasswordHash(), currUser.get().getPasswordHash())) {
                 return new ResponseEntity<>(currUser, HttpStatus.OK);
             }
             else {
@@ -35,7 +35,7 @@ public class LoginController {
         /*
         To test, use the following command:
             curl localhost:8080/login -i -H "Accept: application/json" -H "Content-Type:application/json"
-            -X POST --data "{"""email""":"""test@cooper.edu""", """username""":"""hello"""}"
+            -X POST --data "{"""email""":"""test@cooper.edu""", """passwordHash""":"""12345"""}"
          */
     }
 
@@ -52,14 +52,14 @@ public class LoginController {
         }
         /*
         To test, use the following command:
-            curl localhost:8080/login -i -H "Accept: application/json" -H "Content-Type:application/json"
+            curl localhost:8080/signup -i -H "Accept: application/json" -H "Content-Type:application/json"
             -X POST --data "{"""email""":"""test@cooper.edu""", """username""":"""hello""","""passwordHash""":"""12345678"""}"
          */
     }
 
     @RequestMapping("/")
     public ResponseEntity<String> test() {
-        return new ResponseEntity<> ("Hello World!", HttpStatus.OK);
+        return new ResponseEntity<> ("Hello World, This is Spring!", HttpStatus.OK);
     }
 
     /* To test, use the following command:

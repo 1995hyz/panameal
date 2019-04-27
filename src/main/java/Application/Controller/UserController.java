@@ -16,26 +16,45 @@ public class UserController {
     private UserRepository userRepository;
     @Autowired
     private PostRepository postRepository;
+    @Autowired
+    private FollowingRepository followingRepository;
 
     @RequestMapping(value="/user", method= RequestMethod.POST)
-    public ResponseEntity<Profile> getUserProfile(@RequestBody String username) {
-        Optional<User> currUser = userRepository.findByUsername(username);
-        if(currUser.isEmpty()) {
+    public ResponseEntity<Profile> getUserProfile(@RequestBody FollowPage followPage) {
+        Optional<User> currUser = userRepository.findByEmail(followPage.getEmail());
+        Optional<User> viewUser = userRepository.findByUsername(followPage.getUsername());
+        if(currUser.isEmpty() || viewUser.isEmpty()) {
             return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
         }
-        UserProfile userProfile = new UserProfile(currUser.get().getFirstname(), currUser.get().getLastname(), currUser.get().getUsername());
-        ArrayList<Post> postList= new ArrayList<>();
+
+        int followFlag = 0;
+        Optional<Following> follow = followingRepository.findByUserIdAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
+        if(!follow.isEmpty()){
+            followFlag = 1;
+        }
+        /*Iterable<Following> resultsFollow = followingRepository.findAllByUserId( new ArrayList<> (currUser.get().getId()));
+        for(Iterator iterator=resultsFollow.iterator(); iterator.hasNext();) {
+            Following following = (Following) iterator.next();
+            if (following.getFollowto().equals(currUser.get().getId())) {
+                followFlag = 1;
+            }
+        }*/
+
+        UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(), viewUser.get().getUsername());
+        ArrayList<ReturnPost> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
 
         for(Iterator iter = results.iterator(); iter.hasNext();) {
             Post post = (Post) iter.next();
-            if(post.getUser_id() == currUser.get().getId()){
-                postList.add(post);
+            if(post.getUser_id().equals(viewUser.get().getId())){
+                System.out.println(post.getUser_id());
+                ReturnPost rp = new ReturnPost(post, followPage.getUsername());
+                postList.add(rp);
             }
         }
         Collections.reverse(postList);
-        ArrayList<Post> finalPost = new ArrayList<>(postList);
-        Profile profile = new Profile(userProfile,finalPost);
+        ArrayList<ReturnPost> finalPost = new ArrayList<>(postList);
+        Profile profile = new Profile(userProfile,finalPost, followFlag);
 
         return new ResponseEntity<>(profile,HttpStatus.OK);
     }
