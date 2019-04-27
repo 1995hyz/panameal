@@ -100,6 +100,12 @@ class OtherProfile extends React.Component {
                                 {this.state.username}
                             </Typography>
                         </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <Typography >
+                                {this.state.fname + this.state.lname}
+                            </Typography>
+                        </Grid>
+
                     </Grid>
                     {this.state.posts.map((post, index) => (
                         <FeedTile

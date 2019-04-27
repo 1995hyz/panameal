@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+
     <list default="true" id="6c47c60e-bd2a-4684-90ba-859a04c58d3e" name="Default Changelist" comment="Added BCrypt dependency and password encryption.">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_3_1_0_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Panameal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Panameal.iml" afterDir="false" />
@@ -214,7 +215,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-15" />
     <option name="y" value="-15" />
     <option name="width" value="2580" />
@@ -285,29 +286,58 @@
         <subPane>
           <expand>
             <path>
-              <item name="Panameal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Panameal" type="462c0819:PsiDirectoryNode" />
+              <item name="panameal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panameal Full" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Panameal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Panameal" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Panameal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Panameal" type="462c0819:PsiDirectoryNode" />
+              <item name="panameal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panameal Full" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Panameal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Panameal" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="panameal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panameal Full" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="panameal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panameal Full" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="panameal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panameal Full" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="panameal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panameal Full" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="panameal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panameal Full" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
