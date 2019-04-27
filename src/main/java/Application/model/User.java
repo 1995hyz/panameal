@@ -1,5 +1,7 @@
 package Application.model;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,8 @@ public class User {
     //@Column(name = "id")
     //@OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
     private Integer id;
+
+    private static int workload = 12;
 
     @Column(length = 63)
     private String email;
@@ -35,10 +39,24 @@ public class User {
 
     }
 
+    private static String hashPassword(String pwPlaintext){
+        String salt = BCrypt.gensalt(workload);
+        return BCrypt.hashpw(pwPlaintext, salt);
+    }
+
+    public static boolean checkPassword(String pwPlaintext, String passwordHash){
+        boolean verified = false;
+        if(null == passwordHash || !passwordHash.startsWith("$2a$"))
+            throw new java.lang.IllegalArgumentException("Invalid hash provided for comparison");
+
+        verified = BCrypt.checkpw(pwPlaintext, passwordHash);
+        return verified;
+    }
+
     public User(String email, String username, String passwordHash) {
         this.email = email;
         this.username = username;
-        this.passwordHash = passwordHash;
+        this.passwordHash = hashPassword(passwordHash);
         this.firstname = "";
         this.lastname = "";
         this.bio = "";
@@ -51,7 +69,7 @@ public class User {
     public User(String email, String username, String passwordHash, String firstname, String lastname, String bio, String emailSecond, String phone, int privacyLevel, String imagePath) {
         this.email = email;
         this.username = username;
-        this.passwordHash = passwordHash;
+        this.passwordHash = hashPassword(passwordHash);
         this.firstname = firstname;
         this.lastname = lastname;
         this.bio = bio;
@@ -90,7 +108,7 @@ public class User {
     }
 
     public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+        this.passwordHash = hashPassword(passwordHash);
     }
 
     public String getFirstname() {
