@@ -59,7 +59,7 @@ public class LoginController {
 
     @RequestMapping("/")
     public ResponseEntity<String> test() {
-        return new ResponseEntity<> ("Hello World!", HttpStatus.OK);
+        return new ResponseEntity<> ("Hello World, This is Spring!", HttpStatus.OK);
     }
 
     /* To test, use the following command:
