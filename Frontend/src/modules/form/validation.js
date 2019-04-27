@@ -1,7 +1,12 @@
 import isEmail from 'validator/lib/isEmail';
+import isMobilePhone from 'validator/lib/isMobilePhone'
 
 export function email(value) {
   return value && !isEmail(value.trim()) ? 'Invalid email' : null;
+}
+
+export function number(value) {
+    return value && !isMobilePhone(value.trim(), 'en-US') ? 'Invalid Phone Number' : null;
 }
 
 function isDirty(value) {

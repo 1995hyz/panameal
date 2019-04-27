@@ -11,7 +11,7 @@ import Typography from './modules/components/Typography';
 import AppFooter from './modules/views/AppFooter';
 import AppAppBar from './modules/views/AppAppBar';
 import AppForm from './modules/views/AppForm';
-import {email, required} from './modules/form/validation';
+import {email, number, required} from './modules/form/validation';
 import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
@@ -39,7 +39,7 @@ class SignUp extends React.Component {
   };
 
   validate = values => {
-    const errors = required(['username', 'email', 'password'], values, this.props);
+    const errors = required(['username', 'email', 'password', 'number'], values, this.props);
 
     if (!errors.email) {
       const emailError = email(values.email, values, this.props);
@@ -47,7 +47,12 @@ class SignUp extends React.Component {
         errors.email = email(values.email, values, this.props);
       }
     }
-
+    if (!errors.number) {
+      const numError = number(values.number, values, this.props);
+      if (numError) {
+        errors.number = number(values.number, values, this.props);
+      }
+    }
     return errors;
   };
 
@@ -64,6 +69,9 @@ class SignUp extends React.Component {
         email: values.email,
         passwordHash: values.password,
         username: values.username,
+        phoneNumber: values.number,
+        firstname: values.fname,
+        lastname: values.lname,
       }),
     }).then(res => {
       console.log(res);
@@ -107,6 +115,27 @@ class SignUp extends React.Component {
             >
               {({ handleSubmit, submitting }) => (
                   <form onSubmit={handleSubmit} className={classes.form} noValidate>
+                    <Grid container spacing={16}>
+                      <Grid item xs={12} sm={6}>
+                        <Field
+                            autoFocus
+                            component={RFTextField}
+                            autoComplete="fname"
+                            fullWidth
+                            label="First name"
+                            name="firstName"
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <Field
+                            component={RFTextField}
+                            autoComplete="lname"
+                            fullWidth
+                            label="Last name"
+                            name="lastName"
+                        />
+                      </Grid>
+                    </Grid>
                     <Field
                         autoComplete="username"
                         component={RFTextField}
@@ -116,6 +145,16 @@ class SignUp extends React.Component {
                         label="Username"
                         margin="normal"
                         name="username"
+                    />
+                    <Field
+                        autoComplete="number"
+                        component={RFTextField}
+                        disabled={submitting || sent}
+                        fullWidth
+                        required
+                        label="Number"
+                        margin="normal"
+                        name="number"
                     />
                     <Field
                         autoComplete="email"
