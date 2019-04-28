@@ -11,21 +11,21 @@ public class Comment {
     private Integer comment_id;
 
     @Column()
-    private Integer user_id;
+    private Integer userId;
 
     @Column(length = 4095)
-    private String comment_text;
+    private String commentText;
 
     @Column()
-    private Integer post_id;
+    private Integer postId;
 
     public Comment() {
     }
 
-    public Comment(Integer user_id, String comment_text, Integer post_id) {
-        this.user_id = user_id;
-        this.comment_text = comment_text;
-        this.post_id = post_id;
+    public Comment(Integer userId, String commentText, Integer postId) {
+        this.userId = userId;
+        this.commentText = commentText;
+        this.postId = postId;
     }
 
     public Integer getComment_id() {
@@ -33,27 +33,27 @@ public class Comment {
     }
 
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getuserId() {
+        return userId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setuserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getComment_text() {
-        return comment_text;
+    public String getcommentText() {
+        return commentText;
     }
 
-    public void setComment_text(String comment_text) {
-        this.comment_text = comment_text;
+    public void setcommentText(String commentText) {
+        this.commentText = commentText;
     }
 
-    public Integer getPost_id() {
-        return post_id;
+    public Integer getpostId() {
+        return postId;
     }
 
-    public void setPost_id(Integer post_id) {
-        this.post_id = post_id;
+    public void setpostId(Integer postId) {
+        this.postId = postId;
     }
 }

@@ -26,7 +26,7 @@ public class LoginController {
         }
         else {
             if(currUser.get().checkPassword(loginForm.getPasswordHash(), currUser.get().getPasswordHash())) {
-                return new ResponseEntity<>(currUser, HttpStatus.OK);
+                return new ResponseEntity<>(null, HttpStatus.OK);
             }
             else {
                 return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
@@ -45,7 +45,7 @@ public class LoginController {
         if(currUser.isEmpty()) {
             User newUser = new User(signUpForm.getEmail(), signUpForm.getUsername(), signUpForm.getPasswordHash());
             userRepository.save(newUser);
-            return new ResponseEntity<>(newUser, HttpStatus.OK);
+            return new ResponseEntity<>(null, HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(null, HttpStatus.OK);

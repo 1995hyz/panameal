@@ -55,4 +55,27 @@ public class ViewController {
             return new ResponseEntity<>(currUser.get(), HttpStatus.OK);
         }
     }
+
+    @RequestMapping("/update/user")
+    public ResponseEntity<UserProfile> updateUserProfile(@RequestBody UserProfile userProfile){
+        Optional<User> currUser = userRepository.findByUsername(userProfile.getUsername());
+        if(currUser.isEmpty()) {
+            return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
+        } else {
+            if(currUser.get().checkPassword(userProfile.getPassword(), currUser.get().getPasswordHash())) {
+                User updateUser = currUser.get();
+                updateUser.setFirstname(userProfile.getFirstname());
+                updateUser.setLastname(userProfile.getLastname());
+                updateUser.setBio(userProfile.getBio());
+                updateUser.setEmailSecond(userProfile.getEmailSecond());
+                updateUser.setPhone(userProfile.getPhone());
+                userRepository.save(updateUser);
+                userProfile.setPassword("");
+                return new ResponseEntity<>(userProfile, HttpStatus.OK);
+            }
+            else {
+                return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+            }
+        }
+    }
 }
