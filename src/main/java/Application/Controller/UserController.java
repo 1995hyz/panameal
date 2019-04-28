@@ -40,7 +40,9 @@ public class UserController {
             }
         }*/
 
-        UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(), viewUser.get().getUsername());
+        UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(),
+                viewUser.get().getUsername(), viewUser.get().getBio(), viewUser.get().getEmailSecond(),
+                viewUser.get().getPhone());
         ArrayList<ReturnPost> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
 
@@ -58,4 +60,5 @@ public class UserController {
 
         return new ResponseEntity<>(profile,HttpStatus.OK);
     }
+
 }
