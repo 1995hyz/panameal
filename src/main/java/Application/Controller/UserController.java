@@ -23,15 +23,20 @@ public class UserController {
     public ResponseEntity<Profile> getUserProfile(@RequestBody FollowPage followPage) {
         Optional<User> currUser = userRepository.findByEmail(followPage.getEmail());
         Optional<User> viewUser = userRepository.findByUsername(followPage.getUsername());
-        if(currUser.isEmpty() || viewUser.isEmpty()) {
+        int followFlag = 0;
+        if(viewUser.isEmpty()) {
             return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
         }
 
-        int followFlag = 0;
-        Optional<Following> follow = followingRepository.findByUserIdAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
-        if(!follow.isEmpty()){
-            followFlag = 1;
+        if(currUser.isEmpty()){
+            followFlag = -1;
+        } else{
+            Optional<Following> follow = followingRepository.findByUserIdAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
+            if(!follow.isEmpty()){
+                followFlag = 1;
+            }
         }
+
         /*Iterable<Following> resultsFollow = followingRepository.findAllByUserId( new ArrayList<> (currUser.get().getId()));
         for(Iterator iterator=resultsFollow.iterator(); iterator.hasNext();) {
             Following following = (Following) iterator.next();
@@ -40,7 +45,9 @@ public class UserController {
             }
         }*/
 
-        UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(), viewUser.get().getUsername());
+        UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(),
+                viewUser.get().getUsername(), viewUser.get().getBio(), viewUser.get().getEmailSecond(),
+                viewUser.get().getPhone());
         ArrayList<ReturnPost> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
 
@@ -58,4 +65,5 @@ public class UserController {
 
         return new ResponseEntity<>(profile,HttpStatus.OK);
     }
+
 }
