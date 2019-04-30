@@ -30,9 +30,9 @@ public class FollowController {
         }
         else {
             Following newFollowing = new Following(currUser.get().getId(), followingUser.get().getId());
-            Follower newFollower = new Follower(followingUser.get().getId(), currUser.get().getId());
+            //Follower newFollower = new Follower(followingUser.get().getId(), currUser.get().getId());
             followingRepository.save(newFollowing);
-            followerRepository.save(newFollower);
+            //followerRepository.save(newFollower);
             return new ResponseEntity<>(null, HttpStatus.OK);
         }
     }
@@ -64,7 +64,6 @@ public class FollowController {
             ArrayList<Integer> temp = new ArrayList<>();
             temp.add(currUser.get().getId());
             Iterable<Following> results = followingRepository.findAllByUserid(temp);
-            System.out.println(currUser.get().getId());
             results.forEach(result->{
                 Optional<User> user = userRepository.findById(result.getFollowto());
                 if(user.isPresent()) {
@@ -83,10 +82,11 @@ public class FollowController {
         }
         else {
             ArrayList<String> followerList = new ArrayList<>();
-            Iterable<Follower> results = followerRepository.findAllByUserId( new ArrayList<> (currUser.get().getId()));
-            System.out.println(currUser.get().getId());
+            ArrayList<Integer> temp = new ArrayList<>();
+            temp.add(currUser.get().getId());
+            Iterable<Following> results = followingRepository.findAllByFollowto( temp );
             results.forEach(result->{
-                Optional<User> user = userRepository.findById(result.getFollowby());
+                Optional<User> user = userRepository.findById(result.getUserid());
                 if(user.isPresent()) {
                     followerList.add(user.get().getUsername());
                 }

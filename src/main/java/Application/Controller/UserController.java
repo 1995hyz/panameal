@@ -31,7 +31,7 @@ public class UserController {
         if(currUser.isEmpty()){
             followFlag = -1;
         } else{
-            Optional<Following> follow = followingRepository.findByUserIdAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
+            Optional<Following> follow = followingRepository.findByUseridAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
             if(!follow.isEmpty()){
                 followFlag = 1;
             }
