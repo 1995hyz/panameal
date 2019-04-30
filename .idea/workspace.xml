@@ -207,7 +207,7 @@
     <option name="x" value="-15" />
     <option name="y" value="-15" />
     <option name="width" value="2580" />
-    <option name="height" value="1421" />
+    <option name="height" value="1422" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -958,10 +958,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <folding>
+          <element signature="imports" expanded="true" />
+        </folding>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application/Controller/FollowController.java">
