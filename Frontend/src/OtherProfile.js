@@ -103,7 +103,7 @@ class OtherProfile extends React.Component {
         followText: ["Follow", "Unfollow"],
     };
     componentWillMount() {
-        this.getUser();
+        //this.getUser();
     }
     handleLike = index => {
         console.log(index);
@@ -135,21 +135,23 @@ class OtherProfile extends React.Component {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Typography variant={'subtitle1'} className={classes.desText}>
-                                {'username:'}
+                                {'Username:'}
                             </Typography>
                             <Typography variant={'h6'} className={classes.profText}>
                                 {this.state.username}
                             </Typography>
-                            <Typography variant={'h6'}>
+                            <Typography variant={'subtitle1'} className={classes.desText}>
+                                {'Full Name:'}
+                            </Typography>
+                            <Typography variant={'h6'} className={classes.profText}>
                                 {this.state.fname + ' ' +this.state.lname}
                             </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <Typography >
+                            <Typography variant={'subtitle1'} className={classes.desText}>
+                                {'Phone Number:'}
+                            </Typography>
+                            <Typography variant={'h6'} className={classes.profText}>
                                 {this.state.number}
                             </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
                             <Button
                                 variant="outlined"
                                 color="secondary"
@@ -160,17 +162,28 @@ class OtherProfile extends React.Component {
                             </Button>
                         </Grid>
 
+                        {/*<Grid item xs={12} sm={6}>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                disabled={!this.state.useron}
+                                className={classes.button}
+                                onClick={this.handleFollow}>
+                                {this.state.followText[this.state.follow ? 1 : 0]}
+                            </Button>
+                        </Grid>*/}
+
                     </Grid>
                     {this.state.posts.map((post, index) => (
-                        <FeedTile
-                            className={classes}
-                            username={this.state.username}
-                            content={post.post.content}
-                            postTime={post.post.post_time}
-                            postID={post.post.post_id}
-                            handleLikeButton={this.handleLike}
-                            key={{index}}
-                        />
+                            <FeedTile
+                                className={classes}
+                                username={this.state.username}
+                                content={post.post.content}
+                                postTime={post.post.post_time}
+                                postID={post.post.post_id}
+                                handleLikeButton={this.handleLike}
+                                key={{index}}
+                            />
                         )
                     )}
                 </AppForm>
