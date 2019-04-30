@@ -43,7 +43,8 @@ public class LoginController {
     public ResponseEntity<User> signUpUser(@RequestBody SignUpForm signUpForm) {
         Optional<User> currUser = userRepository.findByEmail(signUpForm.getEmail());
         if(currUser.isEmpty()) {
-            User newUser = new User(signUpForm.getEmail(), signUpForm.getUsername(), signUpForm.getPasswordHash());
+            User newUser = new User(signUpForm.getEmail(), signUpForm.getUsername(), signUpForm.getPasswordHash(),
+                    signUpForm.getFirstname(), signUpForm.getLastname(), "", "", signUpForm.getPhoneNumber(), 1, "");
             userRepository.save(newUser);
             return new ResponseEntity<>(null, HttpStatus.OK);
         }
