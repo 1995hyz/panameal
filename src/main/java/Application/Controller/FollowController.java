@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Optional;
 
 @RestController
@@ -56,11 +57,13 @@ public class FollowController {
     public ResponseEntity<ArrayList<String>> findFollowing(@RequestBody String email) {
         Optional<User> currUser = userRepository.findByEmail(email);
         if(currUser.isEmpty()) {
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         else {
             ArrayList<String> followingList = new ArrayList<>();
-            Iterable<Following> results = followingRepository.findAllByUserId( new ArrayList<> (currUser.get().getId()));
+            ArrayList<Integer> temp = new ArrayList<>();
+            temp.add(currUser.get().getId());
+            Iterable<Following> results = followingRepository.findAllByUserid(temp);
             System.out.println(currUser.get().getId());
             results.forEach(result->{
                 Optional<User> user = userRepository.findById(result.getFollowto());
@@ -76,7 +79,7 @@ public class FollowController {
     public ResponseEntity<ArrayList<String>> findFollower(@RequestBody String email) {
         Optional<User> currUser = userRepository.findByEmail(email);
         if(currUser.isEmpty()) {
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         else {
             ArrayList<String> followerList = new ArrayList<>();

@@ -28,7 +28,7 @@ public class UserController {
         }
 
         int followFlag = 0;
-        Optional<Following> follow = followingRepository.findByUserIdAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
+        Optional<Following> follow = followingRepository.findByUseridAndAndFollowto(currUser.get().getId(), viewUser.get().getId());
         if(!follow.isEmpty()){
             followFlag = 1;
         }

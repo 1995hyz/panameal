@@ -3,9 +3,11 @@ package Application.model;
 
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public interface FollowingRepository extends CrudRepository<Following, Integer> {
-    Optional<Following> findByUserIdAndAndFollowto(Integer userId, Integer followto);
-    Iterable<Following> findAllByUserId(Iterable<Integer> iterable);
+    Optional<Following> findByUseridAndAndFollowto(Integer userid, Integer followto);
+    Iterable<Following> findAllByUserid(ArrayList<Integer> iterable);
+    Optional<Following> findByUserid(Integer userid);
 }
