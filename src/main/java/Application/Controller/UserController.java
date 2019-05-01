@@ -47,7 +47,7 @@ public class UserController {
 
         UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(),
                 viewUser.get().getUsername(), viewUser.get().getBio(), viewUser.get().getEmailSecond(),
-                viewUser.get().getPhone());
+                viewUser.get().getPhone(), "", viewUser.get().getEmail());
         ArrayList<ReturnPost> postList= new ArrayList<>();
         Iterable<Post> results = postRepository.findAll();
 
