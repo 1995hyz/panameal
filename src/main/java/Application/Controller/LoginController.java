@@ -19,14 +19,14 @@ public class LoginController {
     private UserRepository userRepository;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ResponseEntity<String> getLoginForm(@RequestBody LoginForm loginForm) {
+    public ResponseEntity<Username> getLoginForm(@RequestBody LoginForm loginForm) {
         Optional<User> currUser = userRepository.findByEmail(loginForm.getEmail());
         if(currUser.isEmpty()) {
             return new ResponseEntity <>(null, HttpStatus.UNAUTHORIZED);
         }
         else {
             if(currUser.get().checkPassword(loginForm.getPasswordHash(), currUser.get().getPasswordHash())) {
-                return new ResponseEntity<>(currUser.get().getUsername(), HttpStatus.OK);
+                return new ResponseEntity<>(new Username(currUser.get().getUsername()), HttpStatus.OK);
             }
             else {
                 return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
