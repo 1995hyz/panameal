@@ -17,14 +17,15 @@ import AppAppBar from "./modules/views/AppAppBar";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SwipeableViews from 'react-swipeable-views';
-import {Redirect} from 'react-router-dom';
+import {Link as LinkRouter, Redirect} from 'react-router-dom';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import FormButton from "./modules/form/FormButton";
-import {Form} from "react-final-form";
+import {Form, withRouter} from "react-final-form";
 import {email, number, required} from "./modules/form/validation";
 import TextField from '@material-ui/core/TextField';
+import Link from "@material-ui/core/Link";
 
 function TabContainer({ children}) {
     return (
@@ -219,6 +220,7 @@ class OtherProfile extends React.Component {
             .then(response => {
                 if (response.status === 200) {
                     this.setState({follow: !this.state.follow});
+                    this.getFollowers();
                 }
             })
     };
@@ -304,11 +306,12 @@ class OtherProfile extends React.Component {
                 <Redirect push to="/"/>
             );
         }
+        var bar;
         if (localStorage.getItem("authToken")) {
-            var bar = <FeedBar/>;
+            bar = <FeedBar/>;
         }
         else {
-            var bar = <AppAppBar/>;
+            bar = <AppAppBar/>;
         }
         if(!this.state.hideFollow) {
             var followButton = (
@@ -487,10 +490,15 @@ class OtherProfile extends React.Component {
                                     <Typography
                                         variant={'subtitle2'}
                                         className={classes.bio}
-                                        component={Button}
-                                        onClick={()=> this.handleRedirect(user)}
                                     >
-                                        {index + 1 + ' : ' + user}
+                                        {<Link
+                                            underline="none"
+                                            color="inherit"
+                                            component={LinkRouter}
+                                            to={"/u/" + user}
+                                        >
+                                            {index + 1 + ' : ' + user}
+                                        </Link>}
                                     </Typography>
                                 )
                             )}
@@ -500,10 +508,15 @@ class OtherProfile extends React.Component {
                                 <Typography
                                     variant={'subtitle2'}
                                     className={classes.bio}
-                                    component={Button}
-                                    onClick={()=> this.handleRedirect(user)}
                                 >
-                                    {index + 1 + ' : ' + user}
+                                    {<Link
+                                        underline="none"
+                                        color="inherit"
+                                        component={LinkRouter}
+                                        to={"/u/" + user}
+                                    >
+                                        {index + 1 + ' : ' + user}
+                                    </Link>}
                                 </Typography>
                                 )
                             )}

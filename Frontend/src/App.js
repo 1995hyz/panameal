@@ -7,10 +7,12 @@ import ForgotPassword from './ForgotPassword';
 import Feed from './Feed';
 import Profile from './Profile';
 import OtherProfile from './OtherProfile';
+import User from './User';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {PrivateRoute} from './modules/components/PrivateRoute';
 
 class App extends Component {
+
     render() {
         if (localStorage.getItem('authToken')) {
             return (
@@ -19,6 +21,7 @@ class App extends Component {
                         <Route exact path="/" component={Feed} />
                         <Route exact path="/home" component={Home} />
                         <Route exact path="/user/:username" component={OtherProfile} />
+                        <Route exact path="/u/:username" component={User}/>
                         <PrivateRoute exact path="/profile" component={Profile} />
                         <PrivateRoute exact path="/feed" component={Feed} />
                         <Route component={Feed} />
