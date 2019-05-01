@@ -54,8 +54,8 @@ public class FollowController {
     }
 
     @RequestMapping(value = "/following_list")
-    public ResponseEntity<ArrayList<String>> findFollowing(@RequestBody String email) {
-        Optional<User> currUser = userRepository.findByEmail(email);
+    public ResponseEntity<ArrayList<String>> findFollowing(@RequestBody String username) {
+        Optional<User> currUser = userRepository.findByUsername(username);
         if(currUser.isEmpty()) {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
@@ -75,8 +75,8 @@ public class FollowController {
     }
 
     @RequestMapping(value = "/follower_list")
-    public ResponseEntity<ArrayList<String>> findFollower(@RequestBody String email) {
-        Optional<User> currUser = userRepository.findByEmail(email);
+    public ResponseEntity<ArrayList<String>> findFollower(@RequestBody String username) {
+        Optional<User> currUser = userRepository.findByUsername(username);
         if(currUser.isEmpty()) {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }

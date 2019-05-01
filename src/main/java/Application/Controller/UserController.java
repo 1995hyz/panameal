@@ -54,7 +54,6 @@ public class UserController {
         for(Iterator iter = results.iterator(); iter.hasNext();) {
             Post post = (Post) iter.next();
             if(post.getUser_id().equals(viewUser.get().getId())){
-                System.out.println(post.getUser_id());
                 ReturnPost rp = new ReturnPost(post, followPage.getUsername());
                 postList.add(rp);
             }
