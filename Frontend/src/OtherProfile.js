@@ -31,8 +31,9 @@ const styles = theme => ({
         marginTop: theme.spacing.unit * 6,
     },
     button: {
-        marginTop: theme.spacing.unit * 3,
         marginBottom: theme.spacing.unit * 2,
+        marginRight: 'auto',
+        marginLeft: '3.5vw',
     },
     feedback: {
         marginTop: theme.spacing.unit * 2,
@@ -53,6 +54,9 @@ const styles = theme => ({
         fontSize: '28px',
         marginBottom: '2vh',
     },
+    followGrid: {
+        marginTop: '2vh',
+    }
 });
 
 var token = localStorage.getItem('authToken') ? localStorage.getItem('authToken') : "";
@@ -82,6 +86,7 @@ class OtherProfile extends React.Component {
             .then(myJson =>{
                 console.log(myJson);
                 this.setState({
+                    user: myJson.user,
                     posts: myJson.post,
                     fname: myJson.user.firstname,
                     lname: myJson.user.lastname,
@@ -94,6 +99,7 @@ class OtherProfile extends React.Component {
         redirect: false,
         useron: !!localStorage.getItem('authToken'),
         username: this.props.match.params.username,
+        user: "",
         email: "",
         fname: "",
         lname: "",
@@ -103,7 +109,7 @@ class OtherProfile extends React.Component {
         followText: ["Follow", "Unfollow"],
     };
     componentWillMount() {
-        //this.getUser();
+        this.getUser();
     }
     handleLike = index => {
         console.log(index);
@@ -138,30 +144,21 @@ class OtherProfile extends React.Component {
                                 {'Username:'}
                             </Typography>
                             <Typography variant={'h6'} className={classes.profText}>
-                                {this.state.username}
+                                {this.state.user.username}
                             </Typography>
                             <Typography variant={'subtitle1'} className={classes.desText}>
                                 {'Full Name:'}
                             </Typography>
                             <Typography variant={'h6'} className={classes.profText}>
-                                {this.state.fname + ' ' +this.state.lname}
+                                {this.state.user.firstname + ' ' + this.state.user.lastname}
                             </Typography>
                             <Typography variant={'subtitle1'} className={classes.desText}>
                                 {'Phone Number:'}
                             </Typography>
                             <Typography variant={'h6'} className={classes.profText}>
-                                {this.state.number}
+                                {this.state.user.phone}
                             </Typography>
-                            <Button
-                                variant="outlined"
-                                color="secondary"
-                                disabled={!this.state.useron}
-                                className={classes.button}
-                                onClick={this.handleFollow}>
-                                {this.state.followText[this.state.follow ? 1 : 0]}
-                            </Button>
                         </Grid>
-
                         {/*<Grid item xs={12} sm={6}>
                             <Button
                                 variant="outlined"
@@ -173,6 +170,40 @@ class OtherProfile extends React.Component {
                             </Button>
                         </Grid>*/}
 
+                    </Grid>
+                    <Typography variant={'subtitle1'} className={classes.biotitle}>
+                        {'Biography: '}
+                    </Typography>
+                    <Typography variant={'subtitle2'} className={classes.bio}>
+                        {this.state.user.bio}
+                    </Typography>
+                    <Grid container spacing={16} className={classes.followGrid}>
+                        <Grid item xs={12}>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                disabled={!this.state.useron}
+                                className={classes.button}
+                                onClick={this.handleFollow}>
+                                {this.state.followText[this.state.follow ? 1 : 0]}
+                            </Button>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                disabled={!this.state.useron}
+                                className={classes.button}
+                                onClick={this.handleFollow}>
+                                {this.state.followText[this.state.follow ? 1 : 0]}
+                            </Button>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                disabled={!this.state.useron}
+                                className={classes.button}
+                                onClick={this.handleFollow}>
+                                {this.state.followText[this.state.follow ? 1 : 0]}
+                            </Button>
+                        </Grid>
                     </Grid>
                     {this.state.posts.map((post, index) => (
                             <FeedTile
