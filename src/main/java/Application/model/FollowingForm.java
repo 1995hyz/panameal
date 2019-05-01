@@ -4,9 +4,9 @@ public class FollowingForm {
     private String email;
     private String usernameFollowing;
 
-    public FollowingForm(String email, String usernameFollwing) {
+    public FollowingForm(String email, String usernameFollowing) {
         this.email = email;
-        this.usernameFollowing = usernameFollwing;
+        this.usernameFollowing = usernameFollowing;
     }
 
     public String getEmail() {
