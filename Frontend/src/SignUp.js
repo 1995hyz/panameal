@@ -56,7 +56,6 @@ class SignUp extends React.Component {
     };
 
     handleSubmit = values => {
-        console.log("SUCCESSS")
         values.submitting = true;
         fetch(url + '/signup', {
             method: 'POST',
@@ -73,15 +72,11 @@ class SignUp extends React.Component {
                 lastname: values.lname,
             }),
         }).then(res => {
-            console.log(res);
             if(res.status === 200)
                 this.setState({redirect: true});
             else
                 this.setState({redirect: false});
         });
-
-        console.log(values.email)
-
     };
 
     render() {

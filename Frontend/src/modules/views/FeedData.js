@@ -80,7 +80,6 @@ class FeedData extends React.Component {
                 }
             })
             .then(myJson =>{
-                console.log(myJson);
                 this.setState({data: myJson});
             });
     };
@@ -109,6 +108,7 @@ class FeedData extends React.Component {
                                 postTime={item.post.post_time}
                                 postID={item.post.post_id}
                                 handleLikeButton={this.handleLike}
+                                key={index+3000}
                             />
                             /*<Card className={classes.card} key={index}>
                                 <CardHeader
