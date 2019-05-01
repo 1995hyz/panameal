@@ -17,11 +17,18 @@ import AppAppBar from "./modules/views/AppAppBar";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SwipeableViews from 'react-swipeable-views';
-import {Redirect, NavLink} from 'react-router-dom';
-import {Card, CardActions, CardContent, CardHeader} from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import ShareIcon from '@material-ui/icons/Share';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import {Redirect} from 'react-router-dom';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import FormFeedback from "./modules/form/FormFeedback";
+import FormButton from "./modules/form/FormButton";
+import Tooltip from "@material-ui/core/Tooltip";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/core/SvgIcon/SvgIcon";
+import {Field, Form, FormSpy} from "react-final-form";
+import {email, number, required} from "./modules/form/validation";
+import TextField from '@material-ui/core/TextField';
 
 function TabContainer({ children, dir }) {
     return (
@@ -88,6 +95,29 @@ var token = localStorage.getItem('authToken') ? localStorage.getItem('authToken'
 
 class OtherProfile extends React.Component {
 
+    state = {
+        sent: false,
+        redirect: false,
+        userRedirect: "",
+        useron: !!localStorage.getItem('authToken'),
+        username: this.props.match.params.username,
+        user: "",
+        posts: [],
+        cuseremail: token,
+        validUser: true,
+        follow: false,
+        followers: [],
+        following: [],
+        followRoute: ['following', 'unfollowing'],
+        followText: ["Follow", "Unfollow"],
+        value: 0,
+        open: false,
+        firstname: "",
+        lastname: "",
+        phone: "",
+        password: "",
+    };
+
     getUser = () => {
         fetch(url + '/user',  {
             method: 'POST',
@@ -112,6 +142,10 @@ class OtherProfile extends React.Component {
                     this.setState({
                         follow: !!myJson.followFlag,
                         user: myJson.user,
+                        firstname: myJson.user.firstname,
+                        lastname: myJson.user.lastname,
+                        phone: myJson.user.phone,
+                        bio: myJson.user.bio,
                         posts: myJson.post,
                     });
                 }
@@ -135,23 +169,6 @@ class OtherProfile extends React.Component {
             .then(myJSON => {
                 this.setState({following: myJSON})
             })
-    };
-    state = {
-        sent: false,
-        redirect: false,
-        userRedirect: "",
-        useron: !!localStorage.getItem('authToken'),
-        username: this.props.match.params.username,
-        user: "",
-        posts: [],
-        cuseremail: token,
-        validUser: true,
-        follow: false,
-        followers: [],
-        following: [],
-        followRoute: ['following', 'unfollowing'],
-        followText: ["Follow", "Unfollow"],
-        value: 0,
     };
 
     componentDidCatch(error, info) {
@@ -186,10 +203,6 @@ class OtherProfile extends React.Component {
             })
     };
 
-    handleChange = (event, value) => {
-        this.setState({ value });
-    };
-
     handleRedirect = (username) => {
         this.setState({
             redirect: true,
@@ -197,8 +210,64 @@ class OtherProfile extends React.Component {
         });
     };
 
+    validate = values => {
+        const errors = required(['password'], values, this.props);
+        if (!errors.email) {
+            const emailError = email(values.email, values, this.props);
+            if (emailError) {
+                errors.email = email(values.email, values, this.props);
+            }
+        }
+        if (!errors.phone) {
+            const numError = number(values.phone, values, this.props);
+            if (numError) {
+                errors.phone = number(values.phone, values, this.props);
+            }
+        }
+        return errors;
+    };
+
+    openUpdate = () => {
+        this.setState({open: true});
+    };
+    handleClose = () => {
+        this.setState({open: false})
+    };
+    handleSubmit = values => {
+        console.log('submit');
+        fetch(url + '/update/user', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: this.state.user.email,
+                username: this.state.user.username,
+                firstname: this.state.firstname,
+                lastname: this.state.lastname,
+                phone: this.state.phone,
+                bio: this.state.bio,
+                password: this.state.password,
+
+            }),
+        }).then(res => {
+            console.log(res);
+            if(res.status === 200)
+                this.setState({open: false});
+        });
+    };
+
     handleChangeIndex = index => {
         this.setState({ value: index });
+    };
+
+    handleChange = (event, value) => {
+        this.setState({ value });
+    };
+
+    handleChangeValue = name => event => {
+        this.setState({ [name]: event.target.value });
     };
 
     render() {
@@ -218,10 +287,105 @@ class OtherProfile extends React.Component {
         else {
             var bar = <AppAppBar/>;
         }
+        if(localStorage.getItem("username") === this.props.match.params.username) {
+            var updateButton = (
+                <div>
+                    <Tooltip title="Create Post" aria-label="Create Post" onClick={this.openUpdate}>
+                        <Fab color="secondary">
+                            <AddIcon />
+                        </Fab>
+                    </Tooltip>
+                </div>
+            )
+        }
         const { classes } = this.props;
+        const { sent } = this.state;
         return (
             <React.Fragment>
                 {bar}
+                <Dialog
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    aria-labelledby="Update Profile"
+                >
+                    <DialogTitle id="Update Profile">Update Profile</DialogTitle>
+                    <DialogContent>
+                        <Form
+                            onSubmit={this.handleSubmit}
+                            validate={this.validate}
+                        >
+                            {({ handleSubmit, submitting }) => (
+                                <form onSubmit={handleSubmit} className={classes.container} noValidate autoComplete="off">
+                                    <Grid container spacing={16}>
+                                        <Grid item xs={12} sm={6}>
+                                            <TextField
+                                                id="First Name"
+                                                label="First Name"
+                                                className={classes.textField}
+                                                value={this.state.firstname}
+                                                onChange={this.handleChangeValue('firstname')}
+                                                margin="normal"
+                                                name="firstName"
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12} sm={6}>
+                                            <TextField
+                                                id="Last Name"
+                                                label="Last Name"
+                                                className={classes.textField}
+                                                value={this.state.lastname}
+                                                onChange={this.handleChangeValue('lastname')}
+                                                margin="normal"
+                                                name="lastName"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <TextField
+                                        id="Phone Number"
+                                        label="Phone Number"
+                                        className={classes.textField}
+                                        value={this.state.phone}
+                                        onChange={this.handleChangeValue('phone')}
+                                        margin="normal"
+                                        fullWidth
+                                        name="phone"
+                                    />
+                                    <TextField
+                                        id="Bio"
+                                        label="Bio"
+                                        className={classes.textField}
+                                        value={this.state.bio}
+                                        onChange={this.handleChangeValue('bio')}
+                                        margin="normal"
+                                        fullWidth
+                                        name="bio"
+                                    />
+                                    <TextField
+                                        id="Password"
+                                        label="Password"
+                                        className={classes.textField}
+                                        onChange={this.handleChangeValue('password')}
+                                        margin="normal"
+                                        fullWidth
+                                        name="phone"
+                                        type="password"
+                                    />
+                                    <FormButton
+                                        className={classes.button}
+                                        disabled={submitting || sent}
+                                        size="large"
+                                        color="secondary"
+                                        fullWidth
+                                        component={Button}
+                                        onClick={()=>this.handleSubmit()}
+                                    >
+                                        {submitting || sent ? 'In progress…' : 'Update'}
+                                    </FormButton>
+                                </form>
+                            )}
+                        </Form>
+                    </DialogContent>
+                </Dialog>
                 <Tabs
                     value={this.state.value}
                     className={classes.tabs}
@@ -295,6 +459,7 @@ class OtherProfile extends React.Component {
                                     onClick={() => this.handleFollow(this.state.followRoute[this.state.follow ? 1 : 0])}>
                                     {this.state.followText[this.state.follow ? 1 : 0]}
                                 </Button>
+                            {updateButton}
                         </TabContainer>
                         <TabContainer>Item Two</TabContainer>
                         <TabContainer>
