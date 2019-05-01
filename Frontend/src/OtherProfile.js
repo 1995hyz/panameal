@@ -17,7 +17,7 @@ import AppAppBar from "./modules/views/AppAppBar";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SwipeableViews from 'react-swipeable-views';
-import {Redirect} from 'react-router-dom';
+import {Redirect, NavLink} from 'react-router-dom';
 import {Card, CardActions, CardContent, CardHeader} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import ShareIcon from '@material-ui/icons/Share';
@@ -89,7 +89,6 @@ var token = localStorage.getItem('authToken') ? localStorage.getItem('authToken'
 class OtherProfile extends React.Component {
 
     getUser = () => {
-        console.log(this.props.match.params.username);
         fetch(url + '/user',  {
             method: 'POST',
             headers: {
@@ -103,59 +102,23 @@ class OtherProfile extends React.Component {
                 }),
         })
             .then(response => {
-                console.log(this.state);
-                if (response.status === 200) {
-                    var myJson = response.json();
-                    console.log(myJson);
+                this.setState({validUser: response.status === 200});
+                if(this.state.validUser)
+                    return response.json();
+            })
+            .then(myJson => {
+                console.log(myJson);
+                if(this.state.validUser) {
                     this.setState({
+                        follow: !!myJson.followFlag,
                         user: myJson.user,
                         posts: myJson.post,
-                        fname: myJson.user.firstname,
-                        lname: myJson.user.lastname,
-                        follow: !!myJson.user.followFlag,
                     });
                 }
-                else {
-                    this.setState({validUser: false})
-                }
-            })
-    };
-
-    getUser = () => {
-        console.log(this.props.match.params.username);
-        fetch(url + '/user',  {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body:
-                JSON.stringify({
-                    email: this.state.cuseremail,
-                    username: this.state.username,
-                }),
-        })
-            .then(response => {
-                console.log(this.state);
-                if (response.status === 200) {
-                    return response.json();
-                }
-            })
-            .then(myJson =>{
-                console.log(myJson);
-                this.setState({
-                    user: myJson.user,
-                    posts: myJson.post,
-                    fname: myJson.user.firstname,
-                    lname: myJson.user.lastname,
-                    follow: !!myJson.followFlag,
-                });
             });
     };
-
     getFollowing = () => {
-        console.log(this.props.match.params.username);
-        fetch(url + '/follower_list',  {
+        fetch(url + '/following_list',  {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -166,13 +129,17 @@ class OtherProfile extends React.Component {
         })
             .then(response => {
                 if (response.status === 200) {
-                    console.log(response.json());
+                    return response.json();
                 }
+            })
+            .then(myJSON => {
+                this.setState({following: myJSON})
             })
     };
     state = {
         sent: false,
         redirect: false,
+        userRedirect: "",
         useron: !!localStorage.getItem('authToken'),
         username: this.props.match.params.username,
         user: "",
@@ -180,6 +147,9 @@ class OtherProfile extends React.Component {
         cuseremail: token,
         validUser: true,
         follow: false,
+        followers: [],
+        following: [],
+        followRoute: ['following', 'unfollowing'],
         followText: ["Follow", "Unfollow"],
         value: 0,
     };
@@ -195,12 +165,36 @@ class OtherProfile extends React.Component {
     handleLike = index => {
         console.log(index);
     };
-    handleFollow = () => {
-        this.setState({follow: !this.state.follow});
+    handleFollow = (followString) => {
+        console.log(followString);
+        fetch(url + '/' + followString,  {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body:
+                JSON.stringify({
+                    email: this.state.cuseremail,
+                    usernameFollowing: this.state.username,
+                }),
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    this.setState({follow: !this.state.follow});
+                }
+            })
     };
 
     handleChange = (event, value) => {
         this.setState({ value });
+    };
+
+    handleRedirect = (username) => {
+        this.setState({
+            redirect: true,
+            userRedirect: username,
+        });
     };
 
     handleChangeIndex = index => {
@@ -208,6 +202,11 @@ class OtherProfile extends React.Component {
     };
 
     render() {
+        if (this.state.redirect) {
+            return (
+                <Redirect push to={"/user/" + this.state.userRedirect}/>
+            );
+        }
         if (!this.state.validUser) {
             return (
                 <Redirect push to="/"/>
@@ -293,12 +292,24 @@ class OtherProfile extends React.Component {
                                     color="secondary"
                                     disabled={!this.state.useron}
                                     className={classes.button}
-                                    onClick={this.handleFollow}>
+                                    onClick={() => this.handleFollow(this.state.followRoute[this.state.follow ? 1 : 0])}>
                                     {this.state.followText[this.state.follow ? 1 : 0]}
                                 </Button>
                         </TabContainer>
                         <TabContainer>Item Two</TabContainer>
-                        <TabContainer>Item Two</TabContainer>
+                        <TabContainer>
+                            {this.state.following.map( (user, index) => (
+                                <Typography
+                                    variant={'subtitle2'}
+                                    className={classes.bio}
+                                    component={Button}
+                                    onClick={()=> this.handleRedirect(user)}
+                                >
+                                    {index + 1 + ' : ' + user}
+                                </Typography>
+                                )
+                            )}
+                        </TabContainer>
                         <TabContainer>
                             {this.state.posts.map((post, index) => (
                                     <FeedTile

@@ -45,11 +45,17 @@ public class FollowController {
             return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
         }
         else {
-            Following newFollowing = new Following(currUser.get().getId(), followingUser.get().getId());
-            Follower newFollower = new Follower(followingUser.get().getId(), currUser.get().getId());
-            followingRepository.delete(newFollowing);
-            followerRepository.delete(newFollower);
-            return new ResponseEntity<>(null, HttpStatus.OK);
+            Optional<Following> follow = followingRepository.findByUseridAndFollowto(currUser.get().getId(), followingUser.get().getId());
+            if(follow.isEmpty()){
+                return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            } else{
+                System.out.println(currUser.get().getId());
+                System.out.println(followingUser.get().getId());
+                followingRepository.delete(follow.get());
+                return new ResponseEntity<>(null, HttpStatus.OK);
+            }
+            //Following newFollowing = new Following(currUser.get().getId(), followingUser.get().getId());
+
         }
     }
 
