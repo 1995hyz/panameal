@@ -8,6 +8,7 @@ public class UserProfile {
     private String bio;
     private String emailSecond;
     private String phone;
+    private String email;
 
     public UserProfile() {
 
@@ -32,10 +33,29 @@ public class UserProfile {
         this.phone = phone;
     }
 
+    public UserProfile(String firstname, String lastname, String username, String bio, String emailSecond, String phone, String password, String email) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.username = username;
+        this.bio = bio;
+        this.emailSecond = emailSecond;
+        this.phone = phone;
+        this.password = password;
+        this.email = email;
+    }
+
     public UserProfile(String firstname, String lastname, String username){
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setFirstname(String firstname){
