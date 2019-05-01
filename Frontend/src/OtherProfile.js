@@ -92,29 +92,6 @@ var token = localStorage.getItem('authToken') ? localStorage.getItem('authToken'
 
 class OtherProfile extends React.Component {
 
-    state = {
-        sent: false,
-        redirect: false,
-        userRedirect: "",
-        useron: !!localStorage.getItem('authToken'),
-        username: this.props.match.params.username,
-        user: "",
-        posts: [],
-        cuseremail: token,
-        validUser: true,
-        follow: false,
-        followers: [],
-        following: [],
-        followRoute: ['following', 'unfollowing'],
-        followText: ["Follow", "Unfollow"],
-        hideFollow: false,
-        value: 0,
-        open: false,
-        firstname: "",
-        lastname: "",
-        phone: "",
-        password: "",
-    };
 
     getUser = () => {
         fetch(url + '/user',  {
@@ -125,17 +102,23 @@ class OtherProfile extends React.Component {
             },
             body:
                 JSON.stringify({
-                    email: this.state.cuseremail,
+                    email: localStorage.getItem('authToken'),
                     username: this.state.username,
                 }),
         })
             .then(response => {
-                this.setState({validUser: response.status === 200});
-                if(this.state.validUser)
+                this.state.validUser = (response.status === 200);
+                console.log(this.state);
+                console.log((response.status === 200));
+                if(response.status === 200)
                     return response.json();
+                else
+                    return response;
             })
             .then(myJson => {
                 console.log(myJson);
+                if(myJson.status === 400)
+                    return;
                 if(this.state.validUser) {
                     this.setState({
                         followFlag: myJson.followFlag,
@@ -150,6 +133,8 @@ class OtherProfile extends React.Component {
                     if(this.state.user.username === localStorage.getItem('username'))
                         this.setState({hideFollow: true})
                 }
+                else
+                    this.setState({temp: myJson})
             });
     };
     getFollowing = () => {
@@ -168,7 +153,11 @@ class OtherProfile extends React.Component {
                 }
             })
             .then(myJSON => {
-                this.setState({following: myJSON})
+                console.log(myJSON);
+                if(this.state.validUser)
+                    this.setState({following: myJSON});
+                else
+                    this.setState({following: ["test", "test"]});
             })
     };
     getFollowers = () => {
@@ -187,18 +176,19 @@ class OtherProfile extends React.Component {
                 }
             })
             .then(myJSON => {
-                this.setState({followers: myJSON})
+                if(this.state.validUser)
+                    this.setState({followers: myJSON});
+                else
+                    this.setState({followers: ["test", "test"]});
             })
     };
 
-    componentDidCatch(error, info) {
-        this.setState({validUser: false});
-    }
-
     componentWillMount() {
         this.getUser();
-        this.getFollowers();
-        this.getFollowing();
+        if (this.state.validUser) {
+            this.getFollowers();
+            this.getFollowing();
+        }
     }
     handleLike = index => {
         console.log(index);
@@ -213,7 +203,7 @@ class OtherProfile extends React.Component {
             },
             body:
                 JSON.stringify({
-                    email: this.state.cuseremail,
+                    email: localStorage.getItem('authToken'),
                     usernameFollowing: this.state.username,
                 }),
         })
@@ -293,12 +283,40 @@ class OtherProfile extends React.Component {
         this.setState({ [name]: event.target.value });
     };
 
+    componentDidCatch(error, info) {
+        this.setState({validUser: false});
+    }
+    state = {
+        sent: false,
+        redirect: false,
+        userRedirect: "",
+        useron: !!localStorage.getItem('authToken'),
+        username: this.props.match.params.username,
+        user: "",
+        posts: [],
+        cuseremail: token,
+        validUser: true,
+        follow: false,
+        followers: ["test", "test"],
+        following: ["test", "test"],
+        followRoute: ['following', 'unfollowing'],
+        followText: ["Follow", "Unfollow"],
+        hideFollow: false,
+        value: 0,
+        open: false,
+        firstname: "",
+        lastname: "",
+        phone: "",
+        password: "",
+        temp: "",
+    };
+
     render() {
         const { classes } = this.props;
         const { sent } = this.state;
         if (this.state.redirect) {
             return (
-                <Redirect push to={"/user/" + this.state.userRedirect}/>
+                <Redirect push to={"/u/" + this.state.userRedirect}/>
             );
         }
         if (!this.state.validUser) {

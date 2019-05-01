@@ -55,22 +55,9 @@ function ProductHeroLayout(props) {
   return (
     <section className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="full">
-        <img
-          src={process.env.PUBLIC_URL+"productHeroWonder.png"}
-          alt="wonder"
-          width="147"
-          height="80"
-        />
         {children}
         <div className={classes.backdrop} />
         <div className={classNames(classes.background, backgroundClassName)} />
-        <img
-          className={classes.arrowDown}
-          src={process.env.PUBLIC_URL+"productHeroArrowDown.png"}
-          height="16"
-          width="12"
-          alt="arrow down"
-        />
       </LayoutBody>
     </section>
   );

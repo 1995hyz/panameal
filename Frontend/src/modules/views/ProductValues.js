@@ -43,19 +43,9 @@ function ProductValues(props) {
   return (
     <section className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="large">
-        <img
-          src={process.env.PUBLIC_URL+"/productCurvyLines.png"}
-          className={classes.curvyLines}
-          alt="curvy lines"
-        />
         <Grid container spacing={40}>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src={process.env.PUBLIC_URL+"/productValues1.svg"}
-                alt="suitcase"
-              />
               <Typography variant="h6" className={classes.title}>
                 The Best Looking Food
               </Typography>
@@ -67,11 +57,6 @@ function ProductValues(props) {
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src={process.env.PUBLIC_URL+"/productValues2.svg"}
-                alt="graph"
-              />
               <Typography variant="h6" className={classes.title}>
                 New experiences
               </Typography>
@@ -82,11 +67,6 @@ function ProductValues(props) {
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src={process.env.PUBLIC_URL+"/productValues3.svg"}
-                alt="clock"
-              />
               <Typography variant="h6" className={classes.title}>
                 Exclusive Content
               </Typography>

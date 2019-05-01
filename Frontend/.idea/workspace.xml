@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54a472c4-831a-4021-ba03-d4967f14a7c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/User.js" afterDir="false" />
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OtherProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/OtherProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/components/FeedTile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/FeedTile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/url.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/views/AppAppBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/AppAppBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/views/FeedBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/FeedBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/views/FeedData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/FeedData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/views/ProductValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/ProductValues.js" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,85 +29,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/views/FeedData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+<<<<<<< Updated upstream
+            <state relative-caret-position="322">
+              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+=======
+            <state relative-caret-position="138">
+              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="497" column="51" selection-start-line="497" selection-start-column="51" selection-end-line="497" selection-end-column="51" />
-              <folding>
-                <element signature="e#71#97#0" expanded="true" />
-                <element signature="e#4727#5257#0" />
-                <element signature="e#5311#5841#0" />
-                <element signature="n#!!block;n#componentDidCatch#0;n#OtherProfile#0" />
-                <element signature="n#!!block;n#componentWillMount#0;n#OtherProfile#0" />
-                <element signature="e#5459#5494#0" />
-                <element signature="e#6189#6296#0" />
-                <element signature="e#6324#6873#0" />
-                <element signature="e#6899#6943#0" />
-                <element signature="e#6969#7013#0" />
-                <element signature="e#7071#7109#0" />
-                <element signature="e#7113#7161#0" />
-                <element signature="e#7287#7328#0" />
-                <element signature="e#7200#7262#0" />
-                <element signature="e#8481#13716#0" />
-                <element signature="e#16022#18478#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SignUp.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="49" />
-              <folding>
-                <element signature="e#71#97#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/User.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Profile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2292">
-              <caret line="114" selection-start-line="114" selection-end-line="117" selection-end-column="11" />
-              <folding>
-                <element signature="e#71#97#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,10 +49,72 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/views/FeedBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+            <state relative-caret-position="161">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+<<<<<<< Updated upstream
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+=======
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="181">
+              <caret line="128" column="50" lean-forward="true" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+=======
+            <state relative-caret-position="-348">
+              <caret line="105" column="50" lean-forward="true" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
+>>>>>>> Stashed changes
+              <folding>
+                <element signature="e#71#97#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="46">
+              <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+=======
+            <state relative-caret-position="115">
+              <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+>>>>>>> Stashed changes
+              <folding>
+                <element signature="e#28#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
+      <file pinned="false" current-in-tab="false">
+=======
+      <file pinned="false" current-in-tab="true">
+>>>>>>> Stashed changes
+        <entry file="file://$PROJECT_DIR$/src/modules/url.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SignUp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="119" column="52" selection-start-line="119" selection-start-column="52" selection-end-line="119" selection-end-column="52" />
+              <folding>
+                <element signature="e#71#97#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,32 +123,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/views/AppAppBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+<<<<<<< Updated upstream
+            <state relative-caret-position="161">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/form/FormButton.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/components/FeedTile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+=======
+            <state relative-caret-position="207">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -161,14 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>defer</find>
-      <find>onClick</find>
-      <find>col</find>
-      <find>handle</find>
-      <find>validation</find>
-      <find>auth</find>
-      <find>authToken</find>
-      <find>auto</find>
       <find>Redirect</find>
       <find>redirec</find>
       <find>setstate</find>
@@ -179,15 +158,26 @@
       <find>user.</find>
       <find>hand</find>
       <find>handleSu</find>
-      <find>handleChange</find>
       <find>sent</find>
       <find>console.log</find>
       <find>follow</find>
       <find>console.</find>
       <find>console</find>
       <find>LinkRouter</find>
-      <find>redirect</find>
       <find>dir</find>
+      <find>profile</find>
+      <find>wonder</find>
+      <find>productCate</find>
+      <find>change</find>
+      <find>even</find>
+      <find>handlechan</find>
+      <find>handleChange</find>
+      <find>redirect</find>
+      <find>userRedirect</find>
+      <find>handleRedirect</find>
+      <find>followers</find>
+      <find>validUser</find>
+      <find>followTex</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,16 +192,26 @@
         <option value="$PROJECT_DIR$/src/modules/withRoot.js" />
         <option value="$PROJECT_DIR$/src/modules/form/RFTextField.js" />
         <option value="$PROJECT_DIR$/src/modules/form/validation.js" />
-        <option value="$PROJECT_DIR$/src/modules/url.js" />
         <option value="$PROJECT_DIR$/src/SignIn.js" />
-        <option value="$PROJECT_DIR$/src/SignUp.js" />
         <option value="$PROJECT_DIR$/src/Feed.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/User.js" />
-        <option value="$PROJECT_DIR$/src/OtherProfile.js" />
-        <option value="$PROJECT_DIR$/src/modules/views/FeedBar.js" />
+<<<<<<< Updated upstream
+=======
         <option value="$PROJECT_DIR$/src/modules/components/FeedTile.js" />
+>>>>>>> Stashed changes
+        <option value="$PROJECT_DIR$/src/User.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/ProductValues.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/AppAppBar.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/SignUp.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/FeedBar.js" />
+        <option value="$PROJECT_DIR$/src/OtherProfile.js" />
         <option value="$PROJECT_DIR$/src/modules/views/FeedData.js" />
+<<<<<<< Updated upstream
+        <option value="$PROJECT_DIR$/src/App.js" />
+=======
+        <option value="$PROJECT_DIR$/src/modules/url.js" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -244,13 +244,6 @@
               <item name="Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -321,7 +314,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46554000" />
+<<<<<<< Updated upstream
+    <option name="totallyTimeSpent" value="46576000" />
+=======
+    <option name="totallyTimeSpent" value="54367000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -340,7 +337,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37004405" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.26872247" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -370,49 +367,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Profile.js</url>
-          <line>2</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Privacy.js" />
-    <entry file="file://$PROJECT_DIR$/src/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="e#71#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/views/ImageGridList.js" />
     <entry file="file://$PROJECT_DIR$/src/modules/views/tileData.js" />
-    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductValues.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1657">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1473">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/components/Toolbar.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -495,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/url.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/views/AppForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -556,17 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Feed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
-          <folding>
-            <element signature="e#98#133#0" expanded="true" />
-            <element signature="e#3154#8981#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/form/FormButton.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -574,54 +514,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/views/AppAppBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SignUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="49" />
-          <folding>
-            <element signature="e#71#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/components/FeedTile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="497" column="51" selection-start-line="497" selection-start-column="51" selection-end-line="497" selection-end-column="51" />
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding>
-            <element signature="e#71#97#0" expanded="true" />
-            <element signature="e#4727#5257#0" />
-            <element signature="e#5311#5841#0" />
-            <element signature="n#!!block;n#componentDidCatch#0;n#OtherProfile#0" />
-            <element signature="n#!!block;n#componentWillMount#0;n#OtherProfile#0" />
-            <element signature="e#5459#5494#0" />
-            <element signature="e#6189#6296#0" />
-            <element signature="e#6324#6873#0" />
-            <element signature="e#6899#6943#0" />
-            <element signature="e#6969#7013#0" />
-            <element signature="e#7071#7109#0" />
-            <element signature="e#7113#7161#0" />
-            <element signature="e#7287#7328#0" />
-            <element signature="e#7200#7262#0" />
-            <element signature="e#8481#13716#0" />
-            <element signature="e#16022#18478#0" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -636,43 +534,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/views/FeedBar.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductValues.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        <state relative-caret-position="161">
+<<<<<<< Updated upstream
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+=======
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductHero.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="84">
+          <caret line="119" column="52" selection-start-line="119" selection-start-column="52" selection-end-line="119" selection-end-column="52" />
+=======
+        <state relative-caret-position="23">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="128" column="50" lean-forward="true" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="e#71#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Feed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="6" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#98#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/Profile.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/views/FeedBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4209">
+          <caret line="183" selection-start-line="183" selection-end-line="183" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/views/AppAppBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+          <folding>
+            <element signature="e#28#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/User.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+        <state relative-caret-position="161">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/components/FeedTile.js">
+    <entry file="file://$PROJECT_DIR$/src/SignUp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="84">
+          <caret line="119" column="52" selection-start-line="119" selection-start-column="52" selection-end-line="119" selection-end-column="52" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#71#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/views/FeedBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-348">
+          <caret line="105" column="50" lean-forward="true" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
+          <folding>
+            <element signature="e#71#97#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/views/FeedData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+<<<<<<< Updated upstream
+        <state relative-caret-position="322">
+          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+=======
+        <state relative-caret-position="138">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+          <folding>
+            <element signature="e#28#66#0" expanded="true" />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/url.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>

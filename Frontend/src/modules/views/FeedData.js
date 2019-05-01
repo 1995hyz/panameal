@@ -56,11 +56,10 @@ const styles = theme => ({
     },
 });
 
-
-
 class FeedData extends React.Component {
     state = {
         data: [],
+        state: 0,
     };
     getPost = () => {
         fetch(url + '/view_post', {
@@ -71,7 +70,8 @@ class FeedData extends React.Component {
             },
             body: JSON.stringify({
                 email: localStorage.getItem('authToken'),
-                amount: 6,
+                begin: this.state.counter,
+                amount: 5,
             }),
         })
             .then(response => {
@@ -110,6 +110,7 @@ class FeedData extends React.Component {
                                 handleLikeButton={this.handleLike}
                                 key={index+3000}
                             />
+                            
                             /*<Card className={classes.card} key={index}>
                                 <CardHeader
                                     avatar={
