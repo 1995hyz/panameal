@@ -29,11 +29,15 @@ public class FollowController {
             return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
         }
         else {
-            Following newFollowing = new Following(currUser.get().getId(), followingUser.get().getId());
-            //Follower newFollower = new Follower(followingUser.get().getId(), currUser.get().getId());
-            followingRepository.save(newFollowing);
-            //followerRepository.save(newFollower);
-            return new ResponseEntity<>(null, HttpStatus.OK);
+            Optional<Following> follow = followingRepository.findByUseridAndFollowto(currUser.get().getId(), followingUser.get().getId());
+            if(follow.isPresent()) {
+                return new ResponseEntity<>(null, HttpStatus.OK);
+            }
+            else {
+                Following newFollowing = new Following(currUser.get().getId(), followingUser.get().getId());
+                followingRepository.save(newFollowing);
+                return new ResponseEntity<>(null, HttpStatus.OK);
+            }
         }
     }
 
