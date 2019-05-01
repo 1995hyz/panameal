@@ -76,7 +76,7 @@ class Feed extends React.Component {
                 content: values.post,
                 privacy_level: Number(values.privacy),
             }),
-        }).then(res => {console.log(res);
+        }).then(res => {
             if (res.status === 200) {
                 this.setState({open: false})
             }

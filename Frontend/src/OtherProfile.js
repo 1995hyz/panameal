@@ -21,18 +21,14 @@ import {Redirect} from 'react-router-dom';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import FormFeedback from "./modules/form/FormFeedback";
 import FormButton from "./modules/form/FormButton";
-import Tooltip from "@material-ui/core/Tooltip";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/core/SvgIcon/SvgIcon";
-import {Field, Form, FormSpy} from "react-final-form";
+import {Form} from "react-final-form";
 import {email, number, required} from "./modules/form/validation";
 import TextField from '@material-ui/core/TextField';
 
-function TabContainer({ children, dir }) {
+function TabContainer({ children}) {
     return (
-        <Typography component="div" dir={dir} style={{ padding: 4 * 3 }}>
+        <Typography component="div" style={{ padding: 4 * 3 }}>
             {children}
         </Typography>
     );
@@ -110,6 +106,7 @@ class OtherProfile extends React.Component {
         following: [],
         followRoute: ['following', 'unfollowing'],
         followText: ["Follow", "Unfollow"],
+        hideFollow: false,
         value: 0,
         open: false,
         firstname: "",
@@ -140,6 +137,7 @@ class OtherProfile extends React.Component {
                 console.log(myJson);
                 if(this.state.validUser) {
                     this.setState({
+                        followFlag: myJson.followFlag,
                         follow: !!myJson.followFlag,
                         user: myJson.user,
                         firstname: myJson.user.firstname,
@@ -148,6 +146,8 @@ class OtherProfile extends React.Component {
                         bio: myJson.user.bio,
                         posts: myJson.post,
                     });
+                    if(this.state.user.username === localStorage.getItem('username'))
+                        this.setState({hideFollow: true})
                 }
             });
     };
@@ -170,6 +170,25 @@ class OtherProfile extends React.Component {
                 this.setState({following: myJSON})
             })
     };
+    getFollowers = () => {
+        fetch(url + '/follower_list',  {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body:
+            this.state.username
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    return response.json();
+                }
+            })
+            .then(myJSON => {
+                this.setState({followers: myJSON})
+            })
+    };
 
     componentDidCatch(error, info) {
         this.setState({validUser: false});
@@ -177,6 +196,7 @@ class OtherProfile extends React.Component {
 
     componentWillMount() {
         this.getUser();
+        this.getFollowers();
         this.getFollowing();
     }
     handleLike = index => {
@@ -249,12 +269,13 @@ class OtherProfile extends React.Component {
                 phone: this.state.phone,
                 bio: this.state.bio,
                 password: this.state.password,
-
             }),
         }).then(res => {
             console.log(res);
-            if(res.status === 200)
+            if(res.status === 200) {
+                this.getUser();
                 this.setState({open: false});
+            }
         });
     };
 
@@ -271,6 +292,8 @@ class OtherProfile extends React.Component {
     };
 
     render() {
+        const { classes } = this.props;
+        const { sent } = this.state;
         if (this.state.redirect) {
             return (
                 <Redirect push to={"/user/" + this.state.userRedirect}/>
@@ -287,19 +310,35 @@ class OtherProfile extends React.Component {
         else {
             var bar = <AppAppBar/>;
         }
-        if(localStorage.getItem("username") === this.props.match.params.username) {
+        if(!this.state.hideFollow) {
+            var followButton = (
+                <Button
+                    variant="outlined"
+                    color="secondary"
+                    disabled={!this.state.useron}
+                    className={classes.button}
+                    onClick={() => this.handleFollow(this.state.followRoute[this.state.follow ? 1 : 0])}>
+                    {this.state.followText[this.state.follow ? 1 : 0]}
+                </Button>
+            )
+        }
+        else {
             var updateButton = (
                 <div>
-                    <Tooltip title="Create Post" aria-label="Create Post" onClick={this.openUpdate}>
-                        <Fab color="secondary">
-                            <AddIcon />
-                        </Fab>
-                    </Tooltip>
+                    <FormButton
+                        className={classes.button}
+                        size="large"
+                        color="secondary"
+                        fullWidth
+                        component={Button}
+                        onClick={()=>this.openUpdate()}
+                    >
+                        Update Profile
+                    </FormButton>
                 </div>
             )
         }
-        const { classes } = this.props;
-        const { sent } = this.state;
+
         return (
             <React.Fragment>
                 {bar}
@@ -433,17 +472,6 @@ class OtherProfile extends React.Component {
                                         {this.state.user.phone}
                                     </Typography>
                                 </Grid>
-                                {/*<Grid item xs={12} sm={6}>
-                            <Button
-                                variant="outlined"
-                                color="secondary"
-                                disabled={!this.state.useron}
-                                className={classes.button}
-                                onClick={this.handleFollow}>
-                                {this.state.followText[this.state.follow ? 1 : 0]}
-                            </Button>
-                        </Grid>*/}
-
                             </Grid>
                             <Typography variant={'subtitle1'} className={classes.biotitle}>
                                 {'Biography: '}
@@ -451,17 +479,22 @@ class OtherProfile extends React.Component {
                             <Typography variant={'subtitle2'} className={classes.bio}>
                                 {this.state.user.bio}
                             </Typography>
-                                <Button
-                                    variant="outlined"
-                                    color="secondary"
-                                    disabled={!this.state.useron}
-                                    className={classes.button}
-                                    onClick={() => this.handleFollow(this.state.followRoute[this.state.follow ? 1 : 0])}>
-                                    {this.state.followText[this.state.follow ? 1 : 0]}
-                                </Button>
+                            {followButton}
                             {updateButton}
                         </TabContainer>
-                        <TabContainer>Item Two</TabContainer>
+                        <TabContainer>
+                            {this.state.followers.map( (user, index) => (
+                                    <Typography
+                                        variant={'subtitle2'}
+                                        className={classes.bio}
+                                        component={Button}
+                                        onClick={()=> this.handleRedirect(user)}
+                                    >
+                                        {index + 1 + ' : ' + user}
+                                    </Typography>
+                                )
+                            )}
+                        </TabContainer>
                         <TabContainer>
                             {this.state.following.map( (user, index) => (
                                 <Typography

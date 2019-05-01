@@ -85,7 +85,7 @@ class FeedBar extends React.Component{
                             underline="none"
                             className={classNames(classes.rightLink, classes.linkSecondary)}
                             component={LinkRouter}
-                            to={"/profile"}
+                            to={"/user/" + localStorage.getItem('username')}
                         >
                             {'Profile'}
                         </Link>
