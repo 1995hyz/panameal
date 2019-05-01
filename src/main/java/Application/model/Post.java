@@ -8,7 +8,7 @@ import java.util.Date;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer post_id;
+    private Integer postId;
 
     @Column()
     private Integer user_id;
@@ -30,7 +30,7 @@ public class Post {
     }
 
     public Integer getPost_id() {
-        return post_id;
+        return postId;
     }
 
     public Integer getUser_id() {
