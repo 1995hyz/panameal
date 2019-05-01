@@ -12,6 +12,7 @@
     "react-final-form": "^4.1.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-swipeable-views": "^0.13.1",
     "recompose": "^0.30.0",
     "validator": "^10.11.0"
   },
