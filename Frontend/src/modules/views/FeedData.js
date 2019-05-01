@@ -1,8 +1,5 @@
 import React from 'react';
-import {Avatar, Card, CardActions, CardContent, CardHeader, Typography, withStyles} from "@material-ui/core";
-import IconButton from '@material-ui/core/IconButton';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import { Typography, withStyles} from "@material-ui/core";
 import {orange} from '@material-ui/core/colors';
 import url from '../../modules/url';
 import LayoutBody from "../components/LayoutBody";
@@ -44,6 +41,9 @@ const styles = theme => ({
             padding: `${theme.spacing.unit * 10}px ${theme.spacing.unit * 8}px`,
         },
         marginTop: '-10vh',
+    },
+    username: {
+        fontSize: 15,
     },
     title: {
         variant: 'h6',
@@ -93,7 +93,7 @@ class FeedData extends React.Component {
     };
     render() {
         const { classes } = this.props;
-        return(
+        return (
             <div className={classes.root}>
                 <LayoutBody margin marginBottom width="medium">
                     <Paper className={classes.paper}>

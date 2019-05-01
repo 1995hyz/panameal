@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Avatar, Card, CardActions, CardContent, CardHeader, Typography} from "@material-ui/core";
+import {Avatar, Card, CardActions, CardContent, CardHeader, Typography, ButtonBase } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import {Link as LinkRouter} from 'react-router-dom';
+import Link from "@material-ui/core/Link";
 
 
 function FeedTile(props) {
-    const {className, username, content, postTime, postID, handleLikeButton} = props;
+    const {className, username, content, postTime, postID, handleLikeButton, handleRedirect} = props;
     return (
         <Card className={className.card} key={postID}>
             <CardHeader
@@ -16,7 +18,18 @@ function FeedTile(props) {
                         {username.charAt(0)}
                     </Avatar>
                 }
-                title={username}
+                title={
+                    <Link
+                        variant="body1"
+                        underline="none"
+                        color="inherit"
+                        className={className.username}
+                        component={LinkRouter}
+                        to={"/u/" + username}
+                    >
+                        {username}
+                    </Link>
+                }
                 subheader={postTime}
             />
             <CardContent>
