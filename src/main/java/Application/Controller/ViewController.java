@@ -7,6 +7,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,13 +32,14 @@ public class ViewController {
     public ResponseEntity<ArrayList<ReturnPost>> viewPost(@RequestBody PostRequestForm postRequest) {
 
         ArrayList<ReturnPost> postList= new ArrayList<>();
-        Iterable<Post> results = postRepository.findAll();
+        Pageable pageable = new PageRequest(postRequest.getBegin(), postRequest.getAmount(), Sort.Direction.DESC, "PostId");
+        Page<Post> results = postRepository.findAll(pageable);
         for(Iterator iterator = results.iterator(); iterator.hasNext();) {
             Post post = (Post) iterator.next();
             ReturnPost rp = new ReturnPost(post, userRepository.findById(post.getUser_id()).get().getUsername());
             postList.add(rp);
         }
-        Collections.reverse(postList);
+        //Collections.reverse(postList);
         List postL;
         if(postRequest.getAmount() > postList.size()) {
             postL = postList;
