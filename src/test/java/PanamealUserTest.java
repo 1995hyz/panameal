@@ -1,20 +1,33 @@
-import Application.Controller.UserController;
 import Application.model.*;
-import Application.service.LoginService;
-import Application.service.UserService;
+import org.junit.Rule;
 import org.junit.Test;
-import org.springframework.http.ResponseEntity;
+import org.mockito.Mock;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+import org.mockito.stubbing.Answer;
 
-import java.util.Arrays;
+import static org.mockito.Mockito.*;
+
 import java.util.Optional;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class PanamealUserTest {
 
-    //@Test
+    @Mock
+    UserRepository userMock;
+
+    @Mock
+    PostRepository postMock;
+
+    @Mock
+    FollowingRepository followMock;
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+
+    @Test
     public void testUserMem(){
         String email = "tmp@test.com";
         String username = "test";
@@ -22,12 +35,11 @@ public class PanamealUserTest {
         User tmp = new User(email, username, password);
         assertEquals(email,tmp.getEmail());
         assertEquals(username,tmp.getUsername());
-        assertEquals(password,tmp.getPasswordHash());
         tmp = null;
     }
 
     @Test
-    public void testLogin(){
+    public void testLoginMem(){
         String email = "test@test.com";
         String passwordHash = "0123456789";
         LoginForm testLogin = new LoginForm(email,passwordHash);
@@ -46,7 +58,7 @@ public class PanamealUserTest {
         testPost = null;
     }
 
-    //@Test
+    @Test
     public void testSignUp(){
         String email = "tmp@test.com";
         String username = "test";
@@ -55,57 +67,41 @@ public class PanamealUserTest {
         testSignUpForm.setEmail(email);
         testSignUpForm.setUsername(username);
         testSignUpForm.setPasswordHash(password);
-        User testUser = new User(testSignUpForm.getEmail(), testSignUpForm.getUsername(), testSignUpForm.getPasswordHash());
-        assertEquals(email,testUser.getEmail());
-        assertEquals(username,testUser.getUsername());
-        assertEquals(password,testUser.getPasswordHash());
-        //ResponseEntity<> tmp = ResponseEntity<User> signUpUser(testSignUpForm);
-    }
+        Optional<User> currUser = userMock.findByEmail(testSignUpForm.getEmail());
+        if(currUser.isEmpty()) {
+            User newUser = new User(testSignUpForm.getEmail(), testSignUpForm.getUsername(), testSignUpForm.getPasswordHash(),
+                    testSignUpForm.getFirstname(), testSignUpForm.getLastname(), "", "", testSignUpForm.getPhoneNumber(), 1, "");
+            when(userMock.save(any(User.class))).thenAnswer(new Answer<User>() {
+                @Override
+                public User answer(InvocationOnMock invocation) throws Throwable {
+                    Object[] arguments = invocation.getArguments();
+                    if (arguments != null && arguments.length > 0 && arguments[0] != null){
 
-    //@Test
-    public void testSignUpRoute(){
-        String email = "tmp@test.com";
-        String username = "test";
-        String password = "1234567890";
-        SignUpForm testSignUpForm = new SignUpForm();
-        testSignUpForm.setEmail(email);
-        testSignUpForm.setUsername(username);
-        testSignUpForm.setPasswordHash(password);
-        User testUser = new User(testSignUpForm.getEmail(), testSignUpForm.getUsername(), testSignUpForm.getPasswordHash());
-        assertEquals(email,testUser.getEmail());
-        assertEquals(username,testUser.getUsername());
-        assertEquals(password,testUser.getPasswordHash());
-        //ResponseEntity<> tmp = ResponseEntity<User> signUpUser(testSignUpForm);
-    }
+                        User user = (User) arguments[0];
+                        user.setId(1);
 
+                        return user;
+                    }
+                    return null;
+                }
+            });
+            assertEquals(userMock.save(newUser), newUser);
+        }
+
+    }
 
     @Test
     public void testLoginRoute(){
-        /*UserRepository mockRepo = (UserRepository) mock(LoginService.class);
-        String email = "test@test.com";
-        String passwordHash = "0123456789";
-        String username = "UnitTest";
-        User usr1 = new User(email,username,passwordHash);
-        when(mockRepo.findAll()).thenReturn(Arrays.asList(usr1));
-        LoginService service = new LoginService(mockRepo);
-        LoginForm testLogin = new LoginForm(email,passwordHash);
-        //Optional<User> currUser = mockRepo.findByEmail(testLogin.getEmail());
-        //assertEquals(email, currUser.get().getEmail());
-        testLogin = null;*/
+        String email = "tmp@test.com";
+        String username = "test";
+        String password = "1234567890";
+        User newUser = new User(email, username, password,
+                "", "", "", "", "", 1, "");
+        LoginForm LoginForm = new LoginForm();
+        LoginForm.setEmail(email);
+        LoginForm.setPasswordHash(password);
+        when(userMock.findByEmail(email)).thenReturn(null);
+        assertEquals(userMock.findByEmail(LoginForm.getEmail()), null);
     }
-    /*public void addUser() {
-        assert(PanamealUser.addUser("hao2@cooper.edu", "hao2", "121232342") == 1);
-    }
-
-    public void updateUserGeneral() {
-    }
-
-    public void updateUserCredential() {
-    }
-
-    public static void main(String[] args) {
-        PanamealUserTest user = new PanamealUserTest();
-        user.addUser();
-    }*/
 
 }
