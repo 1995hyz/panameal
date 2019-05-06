@@ -104,4 +104,46 @@ public class PanamealUserTest {
         assertEquals(userMock.findByEmail(LoginForm.getEmail()), null);
     }
 
+    @Test
+    public void testPostRoute() {
+        Integer userId = 1;
+        String content = "This is a test.";
+        Integer privacyLevel = 1;
+        Post newPost = new Post(userId, content, privacyLevel);
+        when(postMock.findAll()).thenReturn(null);
+        assertEquals(postMock.findAll(), null);
+    }
+
+    @Test
+    public void testFollowingRoute() {
+        Integer userId = 1;
+        Integer followto = 2;
+        Following newFollowing = new Following(userId, followto);
+        when(followMock.findByUserid(1)).thenReturn(null);
+        assertEquals(followMock.findByUserid(1), null);
+    }
+
+    @Test
+    public void testFollowing() {
+        Integer userId = 1;
+        Integer followto = 2;
+        Following newFollowing = new Following(userId, followto);
+        Optional<Following> currFollowing = followMock.findByUserid(userId);
+        if(currFollowing.isEmpty()) {
+            when(followMock.save(any(Following.class))).thenAnswer(new Answer<Following>() {
+                @Override
+                public Following answer(InvocationOnMock invocation) throws Throwable {
+                    Object[] arguments = invocation.getArguments();
+                    if (arguments != null && arguments.length > 0 && arguments[0] != null){
+
+                        Following newFollowing = (Following) arguments[0];
+                        newFollowing.setFollowing_id(1);
+                        return newFollowing;
+                    }
+                    return null;
+                }
+            });
+            assertEquals(followMock.save(newFollowing), newFollowing);
+        }
+    }
 }
