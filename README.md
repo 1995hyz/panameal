@@ -4,4 +4,4 @@
 # Team Member:
   Ali Rahman, Nithi Subbaian, Kevin Lin, Yingzhi Hao
 # Build-Description:
-
+  We use Maven as our build tool. The Maven file is under the path, "panameal/pom.xml". To build the jar file of our program, run "mvn package".   
