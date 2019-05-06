@@ -37,14 +37,6 @@ public class UserController {
             }
         }
 
-        /*Iterable<Following> resultsFollow = followingRepository.findAllByUserId( new ArrayList<> (currUser.get().getId()));
-        for(Iterator iterator=resultsFollow.iterator(); iterator.hasNext();) {
-            Following following = (Following) iterator.next();
-            if (following.getFollowto().equals(currUser.get().getId())) {
-                followFlag = 1;
-            }
-        }*/
-
         UserProfile userProfile = new UserProfile(viewUser.get().getFirstname(), viewUser.get().getLastname(),
                 viewUser.get().getUsername(), viewUser.get().getBio(), viewUser.get().getEmailSecond(),
                 viewUser.get().getPhone(), "", viewUser.get().getEmail());
