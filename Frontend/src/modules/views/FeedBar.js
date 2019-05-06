@@ -47,13 +47,14 @@ class FeedBar extends React.Component{
     handleLogOut = () => {
         this.setState({redirect: true})
     };
+
     render() {
         const {classes} = this.props;
         if (this.state.redirect) {
             localStorage.removeItem('authToken');
             localStorage.removeItem('username');
-            //window.location.reload();
-            return <Redirect push to="/home" refresh={true}/>;
+            window.location.reload();
+            return <Redirect push to="/" refresh={true}/>;
         }
         return (
         <div>

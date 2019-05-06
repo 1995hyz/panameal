@@ -56,9 +56,7 @@ const styles = theme => ({
         fontSize: 34,
     },
 });
-
 var ctr = 0;
-
 
 class FeedData extends React.Component {
     state = {
@@ -121,6 +119,7 @@ class FeedData extends React.Component {
                                 handleLikeButton={this.handleLike}
                                 key={index+3000}
                             />
+                            
                             /*<Card className={classes.card} key={index}>
                                 <CardHeader
                                     avatar={

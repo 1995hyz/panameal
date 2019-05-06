@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54a472c4-831a-4021-ba03-d4967f14a7c1" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../.idea/Panameal.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
@@ -91,10 +92,16 @@
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+=======
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+=======
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Feed.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OtherProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/OtherProfile.js" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/components/AppBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/AppBar.js" afterDir="false" />
@@ -110,10 +117,20 @@
       <change beforePath="$PROJECT_DIR$/src/modules/form/defer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/form/defer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/url.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/views/AppFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/AppFooter.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/url.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/views/AppAppBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/AppAppBar.js" afterDir="false" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
       <change beforePath="$PROJECT_DIR$/src/modules/views/FeedBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/FeedBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/views/FeedData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/FeedData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/views/ProductValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/views/ProductValues.js" afterDir="false" />
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -125,6 +142,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/form/validation.js">
@@ -133,16 +151,18 @@
               <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+=======
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/components/AppBar.js">
+        <entry file="file://$PROJECT_DIR$/src/modules/views/FeedData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+<<<<<<< Updated upstream
+            <state relative-caret-position="322">
+              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+=======
+            <state relative-caret-position="138">
+              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -150,6 +170,47 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/views/FeedBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+<<<<<<< Updated upstream
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
+              </folding>
+=======
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/src/modules/components/AppBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="181">
+              <caret line="128" column="50" lean-forward="true" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+=======
+            <state relative-caret-position="-348">
+              <caret line="105" column="50" lean-forward="true" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/components/Button.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -166,27 +227,62 @@
               <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="46">
+              <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+=======
+            <state relative-caret-position="115">
+              <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+>>>>>>> Stashed changes
+              <folding>
+                <element signature="e#28#66#0" expanded="true" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/modules/components/LayoutBody.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+=======
+=======
+      <file pinned="false" current-in-tab="true">
+>>>>>>> Stashed changes
+        <entry file="file://$PROJECT_DIR$/src/modules/url.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/modules/components/PrivateRoute.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
               <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/SignUp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="119" column="52" selection-start-line="119" selection-start-column="52" selection-end-line="119" selection-end-column="52" />
+              <folding>
+                <element signature="e#71#97#0" expanded="true" />
+              </folding>
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
             </state>
           </provider>
         </entry>
@@ -194,6 +290,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/components/Snackbar.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state>
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -216,9 +313,18 @@
         <entry file="file://$PROJECT_DIR$/src/modules/components/Typography.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
+=======
+<<<<<<< Updated upstream
+            <state relative-caret-position="161">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="207">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -234,6 +340,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
       <find>onClick</find>
       <find>col</find>
       <find>handle</find>
@@ -241,6 +348,8 @@
       <find>auth</find>
       <find>authToken</find>
       <find>auto</find>
+=======
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
       <find>Redirect</find>
       <find>redirec</find>
       <find>setstate</find>
@@ -251,7 +360,6 @@
       <find>user.</find>
       <find>hand</find>
       <find>handleSu</find>
-      <find>handleChange</find>
       <find>sent</find>
       <find>console.log</find>
       <find>follow</find>
@@ -259,11 +367,27 @@
       <find>console</find>
       <find>LinkRouter</find>
       <find>dir</find>
+<<<<<<< HEAD
       <find>button</find>
       <find>window</find>
       <find>this.setState</find>
       <find>redirect</find>
       <find>img</find>
+=======
+      <find>profile</find>
+      <find>wonder</find>
+      <find>productCate</find>
+      <find>change</find>
+      <find>even</find>
+      <find>handlechan</find>
+      <find>handleChange</find>
+      <find>redirect</find>
+      <find>userRedirect</find>
+      <find>handleRedirect</find>
+      <find>followers</find>
+      <find>validUser</find>
+      <find>followTex</find>
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -278,6 +402,7 @@
         <option value="$PROJECT_DIR$/src/modules/withRoot.js" />
         <option value="$PROJECT_DIR$/src/modules/form/RFTextField.js" />
         <option value="$PROJECT_DIR$/src/modules/form/validation.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/User.js" />
         <option value="$PROJECT_DIR$/src/modules/components/FeedTile.js" />
         <option value="$PROJECT_DIR$/src/OtherProfile.js" />
@@ -291,6 +416,28 @@
         <option value="$PROJECT_DIR$/src/modules/views/AppFooter.js" />
         <option value="$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js" />
         <option value="$PROJECT_DIR$/src/modules/views/ProductValues.js" />
+=======
+        <option value="$PROJECT_DIR$/src/SignIn.js" />
+        <option value="$PROJECT_DIR$/src/Feed.js" />
+<<<<<<< Updated upstream
+=======
+        <option value="$PROJECT_DIR$/src/modules/components/FeedTile.js" />
+>>>>>>> Stashed changes
+        <option value="$PROJECT_DIR$/src/User.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/ProductValues.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/AppAppBar.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/SignUp.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/FeedBar.js" />
+        <option value="$PROJECT_DIR$/src/OtherProfile.js" />
+        <option value="$PROJECT_DIR$/src/modules/views/FeedData.js" />
+<<<<<<< Updated upstream
+        <option value="$PROJECT_DIR$/src/App.js" />
+=======
+        <option value="$PROJECT_DIR$/src/modules/url.js" />
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
       </list>
     </option>
   </component>
@@ -324,13 +471,6 @@
               <item name="Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -401,7 +541,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="50847000" />
+=======
+<<<<<<< Updated upstream
+    <option name="totallyTimeSpent" value="46576000" />
+=======
+    <option name="totallyTimeSpent" value="54367000" />
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -450,31 +598,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Profile.js</url>
-          <line>2</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Privacy.js" />
-    <entry file="file://$PROJECT_DIR$/src/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="e#71#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/views/ImageGridList.js" />
     <entry file="file://$PROJECT_DIR$/src/modules/views/tileData.js" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/logo.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -503,6 +631,15 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/components/Toolbar.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/components/TextField.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/components/PrivateRoute.js">
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="2240" column="63" lean-forward="true" selection-start-line="2240" selection-start-column="63" selection-end-line="2240" selection-end-column="63" />
@@ -587,6 +724,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/url.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -598,6 +736,9 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/views/AppForm.js">
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -645,16 +786,31 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
           <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/form/FormButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/components/FeedTile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/views/AppFooter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -682,42 +838,99 @@
     <entry file="file://$PROJECT_DIR$/src/modules/form/FormFeedback.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+=======
+    <entry file="file://$PROJECT_DIR$/src/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2292">
+          <caret line="114" selection-start-line="114" selection-end-line="117" selection-end-column="11" />
+          <folding>
+            <element signature="e#71#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductValues.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+<<<<<<< Updated upstream
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+=======
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/form/RFTextField.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductHero.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="84">
+          <caret line="119" column="52" selection-start-line="119" selection-start-column="52" selection-end-line="119" selection-end-column="52" />
+=======
+        <state relative-caret-position="23">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/form/validation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
+=======
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="128" column="50" lean-forward="true" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductHeroLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/components/AppBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="e#71#97#0" expanded="true" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/components/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -729,21 +942,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Feed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="6" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#98#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/Profile.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/views/FeedBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/views/ProductCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4209">
+          <caret line="183" selection-start-line="183" selection-end-line="183" />
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/components/LayoutBody.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/views/AppAppBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+          <folding>
+            <element signature="e#28#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/modules/components/PrivateRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -754,8 +1017,31 @@
     <entry file="file://$PROJECT_DIR$/src/modules/components/Snackbar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+=======
+    <entry file="file://$PROJECT_DIR$/src/SignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="119" column="52" selection-start-line="119" selection-start-column="52" selection-end-line="119" selection-end-column="52" />
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#71#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/views/FeedBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OtherProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-348">
+          <caret line="105" column="50" lean-forward="true" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
+          <folding>
+            <element signature="e#71#97#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -768,10 +1054,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/components/Typography.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state>
+=======
+<<<<<<< Updated upstream
+        <state relative-caret-position="322">
+          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+=======
+        <state relative-caret-position="138">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+>>>>>>> Stashed changes
+>>>>>>> 9514f35610c96fc6dbaa29428b234131b7b7cc3f
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+          <folding>
+            <element signature="e#28#66#0" expanded="true" />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/modules/url.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>

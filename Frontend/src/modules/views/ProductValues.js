@@ -39,7 +39,6 @@ const styles = theme => ({
 
 function ProductValues(props) {
     const { classes } = props;
-
     return (
         <section className={classes.root}>
             <LayoutBody className={classes.layoutBody} width="large">
