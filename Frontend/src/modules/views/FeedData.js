@@ -1,10 +1,11 @@
 import React from 'react';
-import { Typography, withStyles} from "@material-ui/core";
+import {Button, Typography, withStyles} from "@material-ui/core";
 import {orange} from '@material-ui/core/colors';
 import url from '../../modules/url';
 import LayoutBody from "../components/LayoutBody";
 import Paper from "../components/Paper";
 import FeedTile from '../components/FeedTile';
+import FormButton from "../form/FormButton";
 
 const styles = theme => ({
     card: {
@@ -56,13 +57,16 @@ const styles = theme => ({
     },
 });
 
+var ctr = 0;
 
 
 class FeedData extends React.Component {
     state = {
         data: [],
+        ctr: 0,
     };
     getPost = () => {
+        console.log(ctr);
         fetch(url + '/view_post', {
             method: 'POST',
             headers: {
@@ -71,6 +75,7 @@ class FeedData extends React.Component {
             },
             body: JSON.stringify({
                 email: localStorage.getItem('authToken'),
+                begin: ctr,
                 amount: 6,
             }),
         })
@@ -80,6 +85,7 @@ class FeedData extends React.Component {
                 }
             })
             .then(myJson =>{
+                console.log(myJson);
                 this.setState({data: myJson});
             });
     };
@@ -87,6 +93,11 @@ class FeedData extends React.Component {
     componentWillMount() {
         this.getPost();
     }
+
+    handleGetMore = () => {
+        ctr = ctr + 1;
+        this.getPost();
+    };
 
     handleLike = index => {
         console.log(index);
@@ -137,6 +148,16 @@ class FeedData extends React.Component {
                             )*/
                         ))}
                     </Paper>
+                    <FormButton
+                        className={classes.button}
+                        size="large"
+                        color="secondary"
+                        fullWidth
+                        component={Button}
+                        onClick={this.handleGetMore}
+                    >
+                        Get More Posts
+                    </FormButton>
                 </LayoutBody>
             </div>
         )

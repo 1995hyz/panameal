@@ -101,7 +101,7 @@ class SignIn extends React.Component {
         let text;
 
         if (this.state.redirect)
-            return <Redirect push to="/Feed"/>;
+            return <Redirect push to="/"/>;
         if (this.state.incorrect)
             text = <Typography variant="body2" align="center" className={classes.text}>
                 {'Incorrect Login. '}

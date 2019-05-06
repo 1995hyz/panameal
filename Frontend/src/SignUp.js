@@ -117,7 +117,7 @@ class SignUp extends React.Component {
                                             autoComplete="fname"
                                             fullWidth
                                             label="First name"
-                                            name="firstName"
+                                            name="fName"
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
@@ -126,7 +126,7 @@ class SignUp extends React.Component {
                                             autoComplete="lname"
                                             fullWidth
                                             label="Last name"
-                                            name="lastName"
+                                            name="lName"
                                         />
                                     </Grid>
                                 </Grid>

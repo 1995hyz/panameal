@@ -19,6 +19,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {Radio} from 'final-form-material-ui';
 import FeedData from './modules/views/FeedData';
+import {Link as LinkRouter, Redirect} from 'react-router-dom';
 import {FormControl, FormControlLabel, FormLabel, RadioGroup} from '@material-ui/core';
 import url from './modules/url';
 
@@ -51,6 +52,7 @@ class Feed extends React.Component {
     state = {
         open: false,
         sent: false,
+        refresh: false,
         privacy: '1',
     };
 
@@ -79,6 +81,7 @@ class Feed extends React.Component {
         }).then(res => {
             if (res.status === 200) {
                 this.setState({open: false})
+                this.setState({refresh: true})
             }
         })
     };
@@ -86,6 +89,11 @@ class Feed extends React.Component {
     render() {
         const { classes } = this.props;
         const { sent } = this.state;
+        if (this.state.refresh) {
+            return (
+                <Redirect push to="/"/>
+            );
+        }
         return (
             <LayoutBody margin marginBottom width="xlarge">
                 <FeedBar />

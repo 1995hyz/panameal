@@ -125,7 +125,7 @@ class OtherProfile extends React.Component {
             },
             body:
                 JSON.stringify({
-                    email: this.state.cuseremail,
+                    email: localStorage.getItem('authToken'),
                     username: this.state.username,
                 }),
         })
