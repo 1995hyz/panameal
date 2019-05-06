@@ -5,7 +5,7 @@ import {withStyles} from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '../components/AppBar';
 import Toolbar, {styles as toolbarStyles} from '../components/Toolbar';
-import {Link as LinkRouter} from 'react-router-dom';
+import {Link as LinkRouter, Redirect} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
@@ -47,13 +47,14 @@ class FeedBar extends React.Component{
     handleLogOut = () => {
         this.setState({redirect: true})
     };
+
     render() {
         const {classes} = this.props;
         if (this.state.redirect) {
             localStorage.removeItem('authToken');
             localStorage.removeItem('username');
             window.location.reload();
-            //return <Redirect push to="/home" refresh={true}/>;
+            return <Redirect push to="/" refresh={true}/>;
         }
         return (
         <div>

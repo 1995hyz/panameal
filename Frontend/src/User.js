@@ -9,7 +9,6 @@ class User extends React.Component {
     }
 }
 
-
 export default compose(
     withRoot,
 )(User);
